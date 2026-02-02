@@ -17,15 +17,22 @@ const NavBar = () => {
       className="flex items-center justify-between px-[16px] pt-5 backdrop-blur-[10px] md:mx-auto md:max-w-[1200px] md:justify-around"
     >
       <div className="flex items-center justify-between gap-3">
-        <div
-          className={`flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-white ${isDark ? "bg-amber-300" : "bg-sky-200"}`}
+        <Link
+          href="/"
+          className={`flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-xl border border-white transition-all duration-200 hover:scale-[0.9] ${isDark ? "bg-amber-300" : "bg-sky-200"}`}
         >
           <Image src="/logo.webp" alt="Logo" width={60} height={60} />
-        </div>
+        </Link>
         <div className={`font-md font-sm mt-8 flex gap-4 self-end text-[16px]`}>
-          <Link href="#work">Work</Link>
-          <Link href="#projects">Projects</Link>
-          <Link href="/blogs">Blogs</Link>
+          <Link className="hover:underline" href="#work">
+            Work
+          </Link>
+          <Link className="hover:underline" href="#projects">
+            Projects
+          </Link>
+          <Link className="hover:underline" href="/blogs">
+            Blogs
+          </Link>
         </div>
       </div>
       <div>
