@@ -7,22 +7,22 @@ import Link from "next/link";
 
 import { Moon, Sun } from "lucide-react";
 
-import { useDark } from "../Navbar/ThemeProvider";
+import { useDark } from "../../hooks/ThemeProvider";
 
 const NavBar = () => {
   const { isDark, setIsDark } = useDark();
   return (
     <nav
       style={{ backdropFilter: "blur(7px)" }}
-      className="mx-5 mt-5 flex items-center justify-between backdrop-blur-[10px] md:mx-auto md:max-w-[1200px] md:justify-around"
+      className="mx-5 flex items-center justify-between pt-5 backdrop-blur-[10px] md:mx-auto md:max-w-[1200px] md:justify-around"
     >
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex items-center justify-between gap-3">
         <div
           className={`flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-white ${isDark ? "bg-amber-300" : "bg-sky-200"}`}
         >
           <Image src="/logo.webp" alt="Logo" width={60} height={60} />
         </div>
-        <div className={`font-md flex gap-4 self-end text-sm font-medium`}>
+        <div className={`font-md font-sm mt-8 flex gap-4 self-end text-[16px]`}>
           <Link href="#work">Work</Link>
           <Link href="#projects">Projects</Link>
           <Link href="/blogs">Blogs</Link>
@@ -31,7 +31,7 @@ const NavBar = () => {
       <div>
         <button
           onClick={() => setIsDark(!isDark)}
-          className={`rounded-lg p-3 transition-all duration-200 sm:p-[10px] ${
+          className={`cursor-pointer rounded-lg p-3 transition-all duration-200 sm:p-[10px] ${
             isDark
               ? "bg-zinc-950 text-white/80 hover:text-yellow-400"
               : "bg-neutral-100 text-neutral-500 hover:text-amber-500"
