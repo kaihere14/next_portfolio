@@ -10,7 +10,7 @@ const Intro = () => {
           Hi, I&apos;m Arman{" "}
           <span className="text-neutral-400 dark:text-neutral-500">—</span>
         </span>
-        <span className="block w-[90vw] text-neutral-400 dark:text-neutral-500">
+        <span className="block max-w-full text-neutral-400 dark:text-neutral-500">
           A Full Stack web developer.
         </span>
       </h1>

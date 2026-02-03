@@ -15,6 +15,18 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "upload.wikimedia.org",
       },
+      {
+        protocol: "https",
+        hostname: "skillicons.dev",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
     ],
   },
 };

@@ -4,6 +4,7 @@ import Intro from "./Intro";
 import SocialLinks from "./SocialLinks";
 import SongActivity from "./SongActivity";
 import { PersonalInfo, Stats } from "./Stats";
+import TechStack from "./TechStack";
 
 const Hero = () => {
   return (
@@ -23,6 +24,10 @@ const Hero = () => {
       <Stats />
 
       <PersonalInfo />
+
+      <hr className="mt-15" />
+
+      <TechStack />
     </section>
   );
 };

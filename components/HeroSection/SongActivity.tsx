@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import axios from "axios";
-import { Code, Play } from "lucide-react";
+import { Play } from "lucide-react";
 
 const SongActivity = async () => {
   const songData = await axios.get(
@@ -10,7 +10,7 @@ const SongActivity = async () => {
   );
   return (
     <div
-      className={`col-span-2 my-5 flex items-center justify-between gap-4 rounded-xl border p-4 transition-all duration-300`}
+      className={`col-span-2 mt-10 mb-5 flex items-center justify-between gap-4 rounded-xl border p-4 transition-all duration-300`}
     >
       <div className="flex items-center gap-3">
         <div className="relative">
