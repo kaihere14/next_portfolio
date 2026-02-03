@@ -8,7 +8,7 @@ import GitHub from "@/components/GitHub/GitHub";
 import Hero from "@/components/HeroSection/Hero";
 import Projects from "@/components/Projects/Projects";
 
-const baseUrl = "https://armanthakur.dev"; // Replace with your actual domain
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://armandev.space"; // Replace with your actual domain
 
 export const metadata: Metadata = {
   title: "Arman Thakur | Full Stack Developer & Web Engineer Portfolio",

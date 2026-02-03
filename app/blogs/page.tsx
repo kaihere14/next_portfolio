@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { ArrowLeft, PenLine } from "lucide-react";
 
-const baseUrl = "https://armanthakur.dev"; // Replace with your actual domain
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://armandev.space"; // Replace with your actual domain
 
 export const metadata: Metadata = {
   title: "Blog - Web Development Articles & Tutorials | Arman Thakur",
