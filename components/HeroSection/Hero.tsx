@@ -2,7 +2,8 @@ import ProfileAvatar from "./avatar-standard-4";
 import GetInTouch from "./GetInTouch";
 import Intro from "./Intro";
 import SocialLinks from "./SocialLinks";
-import { Stats } from "./Stats";
+import SongActivity from "./SongActivity";
+import { PersonalInfo, Stats } from "./Stats";
 
 const Hero = () => {
   return (
@@ -17,7 +18,11 @@ const Hero = () => {
 
       <SocialLinks />
 
+      <SongActivity />
+
       <Stats />
+
+      <PersonalInfo />
     </section>
   );
 };

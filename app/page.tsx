@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className="mx-4 md:mx-auto md:max-w-[720px]">
+    <div className="mx-4 overflow-hidden md:mx-auto md:max-w-[720px]">
       <Hero />
     </div>
   );

@@ -64,3 +64,27 @@ export const Stats = async () => {
     </div>
   );
 };
+
+export const PersonalInfo = async () => {
+  return (
+    <div>
+      <div
+        className={`col-span-2 my-5 flex items-center justify-between gap-4 rounded-xl border p-4 transition-all duration-300`}
+      >
+        <div className="flex items-center gap-3">
+          <div className="relative">
+            <div className="absolute -inset-1 animate-pulse rounded-full bg-green-500/20"></div>
+            <div className="relative z-10 h-2 w-2 rounded-full bg-green-500 transition-transform"></div>
+          </div>
+          <div className="flex flex-col">
+            <span className={`text-xs font-medium tracking-wider uppercase`}>
+              Current Focus
+            </span>
+            <span className={`text-sm font-medium`}>Building DaemonDoc</span>
+          </div>
+        </div>
+        <Code size={18} className="text-neutral-600" />
+      </div>
+    </div>
+  );
+};
