@@ -5,11 +5,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "motion/react";
 
-import { useDark } from "@/hooks/ThemeProvider";
 import type { LanyardData, LanyardResponse } from "@/types/discord";
 
 const ActiveStatus = () => {
-  const { isDark } = useDark();
   const [isDisplaying, setIsDisplaying] = useState(false);
   const [discord, setDiscord] = useState<LanyardData | null>(null);
 
@@ -21,7 +19,6 @@ const ActiveStatus = () => {
         const res = await axios.get<LanyardResponse>(
           "https://api.lanyard.rest/v1/users/1212050219538325516"
         );
-        console.log(res.data.data);
         setDiscord(res.data.data);
       } catch (err) {
         console.error(err);
@@ -41,7 +38,7 @@ const ActiveStatus = () => {
       <div
         onMouseEnter={() => setIsDisplaying(true)}
         onMouseLeave={() => setIsDisplaying(false)}
-        className={`absolute right-[0.7] bottom-[0.7] z-10 h-2 w-2 cursor-pointer rounded-full border-2 p-2 ${isDark ? "border-gray-800 bg-black" : "border-gray-200 bg-gray-100"}`}
+        className="transition-scale absolute right-[0.7] bottom-[0.7] z-10 h-2 w-2 rounded-full border-2 border-gray-200 bg-gray-100 p-2 duration-300 hover:scale-[0.9] dark:border-gray-800 dark:bg-black"
       >
         <span
           className={`border-background absolute right-[4] bottom-[4] size-2 rounded-full ${discord?.discord_status === "online" ? "bg-green-500" : discord?.discord_status === "idle" ? "bg-yellow-500" : discord?.discord_status === "dnd" ? "bg-red-500" : "bg-gray-500"}`}
@@ -57,7 +54,7 @@ const ActiveStatus = () => {
             damping: 20,
             duration: 0.3,
           }}
-          className={`absolute bottom-[2px] left-[70px] flex h-4 w-[60px] items-center justify-center rounded-full border border-gray-300 pl-2 text-sm font-bold text-gray-400 ${isDark ? "border-gray-600 bg-black" : "border-gray-200 bg-gray-100"}`}
+          className="absolute bottom-[2px] left-[85px] flex h-4 w-[60px] items-center justify-center rounded-full border border-gray-200 bg-gray-100 pl-1 text-sm font-bold text-gray-400 dark:border-gray-600 dark:bg-black"
         >
           {discord?.discord_status}
         </motion.div>

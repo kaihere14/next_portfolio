@@ -1,13 +1,23 @@
-import React from "react";
-
-import Avatar from "./Avatar";
+import ProfileAvatar from "./avatar-standard-4";
+import GetInTouch from "./GetInTouch";
+import Intro from "./Intro";
+import SocialLinks from "./SocialLinks";
+import { Stats } from "./Stats";
 
 const Hero = () => {
   return (
-    <section>
+    <section className="w-full">
       <div className="mt-20">
-        <Avatar />
+        <ProfileAvatar />
       </div>
+
+      <Intro />
+
+      <GetInTouch />
+
+      <SocialLinks />
+
+      <Stats />
     </section>
   );
 };

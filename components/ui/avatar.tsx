@@ -1,22 +1,18 @@
-"use client";
-
 import * as React from "react";
 
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
-import { useDark } from "@/hooks/ThemeProvider";
 import { cn } from "@/lib/utils";
 
 function Avatar({
   className,
   ...props
 }: React.ComponentProps<typeof AvatarPrimitive.Root>) {
-  const { isDark } = useDark();
   return (
     <AvatarPrimitive.Root
       data-slot="avatar"
       className={cn(
-        `relative flex size-8 h-20 w-20 shrink-0 overflow-hidden rounded-full ${isDark ? "bg-amber-300" : "bg-sky-200"}`,
+        "relative flex size-8 h-25 w-25 shrink-0 overflow-hidden rounded-full bg-sky-200 dark:bg-amber-300",
         className
       )}
       {...props}
@@ -37,20 +33,4 @@ function AvatarImage({
   );
 }
 
-function AvatarFallback({
-  className,
-  ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {
-  return (
-    <AvatarPrimitive.Fallback
-      data-slot="avatar-fallback"
-      className={cn(
-        "bg-muted flex size-full items-center justify-center rounded-full",
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-export { Avatar, AvatarImage, AvatarFallback };
+export { Avatar, AvatarImage };
