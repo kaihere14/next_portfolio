@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Image from "next/image";
 
+import Hero from "@/components/HeroSection/Hero";
+
 export const metadata: Metadata = {
   title: "Arman Thakur | Full Stack Developer",
   description:
@@ -8,7 +10,11 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
-  return <div className="mx-5 md:mx-auto md:max-w-[720px]"></div>;
+  return (
+    <div className="mx-4 md:mx-auto md:max-w-[720px]">
+      <Hero />
+    </div>
+  );
 };
 
 export default page;
