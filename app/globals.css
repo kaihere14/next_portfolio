@@ -6,6 +6,9 @@
   font-family: "hanken";
   src: url("/HankenGrotesk-Variable.ttf");
 }
+html {
+  scroll-behavior: smooth;
+}
 
 html.dark {
   --background: #0a0a0a;

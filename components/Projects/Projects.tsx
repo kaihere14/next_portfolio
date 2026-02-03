@@ -105,7 +105,7 @@ const projects: ProjectType[] = [
 
 const Projects = () => {
   return (
-    <section className="mt-15">
+    <section id="projects" className="mt-15">
       <div className="flex items-center justify-between">
         <div>
           <p className="mb-1 text-sm text-neutral-500">Featured</p>
