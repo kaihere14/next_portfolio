@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import AboutMe from "@/components/AboutMe/AboutMe";
 import Achievments from "@/components/Achievments/Achievments";
 import Experience from "@/components/Experience/Experience";
+import Footer from "@/components/Footer/Footer";
 import GitHub from "@/components/GitHub/GitHub";
 import Hero from "@/components/HeroSection/Hero";
 import Projects from "@/components/Projects/Projects";
@@ -22,6 +23,7 @@ const page = () => {
       <AboutMe />
       <GitHub />
       <Achievments />
+      <Footer />
     </div>
   );
 };
