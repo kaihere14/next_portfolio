@@ -32,7 +32,7 @@ const AboutMe = () => {
           </div>
         </div>
         <div className="min-w-0 flex-1">
-          <h1 className="mb-2 text-3xl font-bold md:text-4xl">Arman Thakur</h1>
+          <h2 className="mb-2 text-3xl font-bold md:text-4xl">Arman Thakur</h2>
           <p className="mb-4 text-base">
             I&apos;m a Full Stack web developer passionate about building
             scalable SaaS and AI-powered applications. I love solving real-world

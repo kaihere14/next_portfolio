@@ -3,10 +3,22 @@ import Link from "next/link";
 
 import { ArrowLeft, PenLine } from "lucide-react";
 
+const baseUrl = "https://armanthakur.dev"; // Replace with your actual domain
+
 export const metadata: Metadata = {
-  title: "Blog | Arman Thakur",
+  title: "Blog - Web Development Articles & Tutorials | Arman Thakur",
   description:
-    "Blog posts coming soon. Stay tuned for articles on web development, technology, and more.",
+    "Articles on web development, React, Next.js, and full-stack engineering. Coming soon!",
+  alternates: {
+    canonical: "/blogs",
+  },
+  openGraph: {
+    title: "Blog - Web Development Articles & Tutorials | Arman Thakur",
+    description:
+      "Articles on web development, React, Next.js, and full-stack engineering. Coming soon!",
+    url: `${baseUrl}/blogs`,
+    type: "website",
+  },
 };
 
 const BlogsPage = () => {

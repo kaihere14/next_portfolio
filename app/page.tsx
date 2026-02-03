@@ -8,10 +8,54 @@ import GitHub from "@/components/GitHub/GitHub";
 import Hero from "@/components/HeroSection/Hero";
 import Projects from "@/components/Projects/Projects";
 
+const baseUrl = "https://armanthakur.dev"; // Replace with your actual domain
+
 export const metadata: Metadata = {
-  title: "Arman Thakur | Full Stack Developer",
+  title: "Arman Thakur | Full Stack Developer & Web Engineer Portfolio",
   description:
-    "Arman Thakur is a full stack developer specializing in modern web technologies. Experienced in building scalable, high-performance applications with clean architecture, responsive UI, and production-ready backend systems.",
+    "Full Stack Developer specializing in React, Next.js, TypeScript & Node.js. Building scalable web apps with clean UI and great user experience.",
+  keywords: [
+    "Full Stack Developer",
+    "Web Developer",
+    "React Developer",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "Portfolio",
+    "Arman Thakur",
+  ],
+  authors: [{ name: "Arman Thakur" }],
+  creator: "Arman Thakur",
+  metadataBase: new URL(baseUrl),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: baseUrl,
+    title: "Arman Thakur | Full Stack Developer & Web Engineer Portfolio",
+    description:
+      "Full Stack Developer specializing in React, Next.js, TypeScript & Node.js. Building scalable web apps with clean UI and great user experience.",
+    siteName: "Arman Thakur Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Arman Thakur | Full Stack Developer & Web Engineer Portfolio",
+    description:
+      "Full Stack Developer specializing in React, Next.js, TypeScript & Node.js. Building scalable web apps with clean UI and great user experience.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 const page = () => {
