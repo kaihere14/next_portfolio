@@ -24,10 +24,10 @@ const NavBar = () => {
           <Image src="/Logo.webp" alt="Logo" width={60} height={60} />
         </Link>
         <div className="font-md font-sm mt-8 flex gap-4 self-end text-[16px]">
-          <Link className="hover:underline" href="#work">
+          <Link className="hover:underline" href="/#work">
             Work
           </Link>
-          <Link className="hover:underline" href="#projects">
+          <Link className="hover:underline" href="/#projects">
             Projects
           </Link>
           <Link className="hover:underline" href="/blogs">

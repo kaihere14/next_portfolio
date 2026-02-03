@@ -49,7 +49,7 @@ const Footer = () => {
       </div>
       <div className={`border-t pt-8 text-center`}>
         <p className={`text-xs`}>
-          © 2025 Crafted with <span className="text-red-500">♥</span> by Arman
+          © 2026 Crafted with <span className="text-red-500">♥</span> by Arman
           Thakur.
         </p>
       </div>

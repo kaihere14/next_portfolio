@@ -16,7 +16,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section className="mt-15 space-y-8">
+    <section id="work" className="mt-15 space-y-8">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
