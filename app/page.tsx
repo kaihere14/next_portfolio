@@ -1,7 +1,12 @@
 import { Metadata } from "next";
-import Image from "next/image";
 
+import AboutMe from "@/components/AboutMe/AboutMe";
+import Achievments from "@/components/Achievments/Achievments";
+import Experience from "@/components/Experience/Experience";
+import Footer from "@/components/Footer/Footer";
+import GitHub from "@/components/GitHub/GitHub";
 import Hero from "@/components/HeroSection/Hero";
+import Projects from "@/components/Projects/Projects";
 
 export const metadata: Metadata = {
   title: "Arman Thakur | Full Stack Developer",
@@ -13,6 +18,12 @@ const page = () => {
   return (
     <div className="mx-4 md:mx-auto md:max-w-[720px]">
       <Hero />
+      <Experience />
+      <Projects />
+      <AboutMe />
+      <GitHub />
+      <Achievments />
+      <Footer />
     </div>
   );
 };
