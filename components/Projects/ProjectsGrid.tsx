@@ -24,6 +24,7 @@ const ProjectsGrid = ({ projects, initialCount = 4 }: ProjectsGridProps) => {
         {visibleProjects.map((project, index) => (
           <div
             key={project.id}
+            className="h-full"
             style={{
               opacity: 1,
               transform: "translateY(0)",

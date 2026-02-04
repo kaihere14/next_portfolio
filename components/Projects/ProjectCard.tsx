@@ -32,7 +32,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
   const { name, description, image, tech, status, link, githubLink } = project;
 
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-2xl border bg-neutral-50 transition-all duration-500 ease-out hover:border-neutral-300 hover:bg-neutral-100 dark:bg-neutral-900/50 dark:hover:border-neutral-700 dark:hover:bg-neutral-900">
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-neutral-50 transition-all duration-500 ease-out hover:border-neutral-300 hover:bg-neutral-100 dark:bg-neutral-900/50 dark:hover:border-neutral-700 dark:hover:bg-neutral-900">
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         <Image
