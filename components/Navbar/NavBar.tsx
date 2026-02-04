@@ -14,7 +14,7 @@ const NavBar = () => {
   return (
     <nav
       style={{ backdropFilter: "blur(7px)" }}
-      className="sticky top-0 z-100 flex items-center justify-between px-[20px] py-3 backdrop-blur-[7px] sm:pl-[26px] md:mx-auto md:max-w-[1200px] md:justify-around"
+      className="sticky top-0 z-100 flex items-center justify-between px-8 py-3 backdrop-blur-[7px] sm:px-[52px] md:mx-auto md:max-w-[1200px] md:justify-around"
     >
       <div className="flex items-center justify-between gap-3">
         <Link

@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <div className="mx-4 md:mx-auto md:max-w-[720px]">
+    <div className="px-8 md:mx-auto md:max-w-[720px]">
       <Hero />
       <Experience />
       <Projects />

@@ -84,7 +84,7 @@ const TechStack = () => {
   };
 
   return (
-    <section className="mt-15 w-[90vw] space-y-6 md:w-full">
+    <section className="mt-15 flex w-full flex-col space-y-6">
       {/* Header */}
       <div>
         <p className="mb-1 text-sm text-neutral-500">Expertise</p>
@@ -92,7 +92,7 @@ const TechStack = () => {
           Tech Stack & Tools
         </h2>
       </div>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex w-full flex-wrap justify-center gap-3">
         {techStack.map((tech) => (
           <div key={tech.name} className="group relative">
             {/* Icon Container */}
