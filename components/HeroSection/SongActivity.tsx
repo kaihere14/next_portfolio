@@ -5,9 +5,10 @@ import axios from "axios";
 import { Play } from "lucide-react";
 
 const SongActivity = async () => {
-  const songData = await axios.get(
-    "https://portfolio-3-backend.vercel.app/api/spotify/playback"
-  );
+  const songData = await fetch(
+    "https://portfolio-3-backend.vercel.app/api/spotify/playback",
+    { cache: "no-store" }
+  ).then((res) => res.json());
   return (
     <div
       className={`col-span-2 mt-10 mb-5 flex items-center justify-between gap-4 rounded-xl border p-4 transition-all duration-300`}
@@ -15,8 +16,8 @@ const SongActivity = async () => {
       <div className="flex items-center gap-3">
         <div className="relative">
           <Image
-            src={songData?.data?.albumArt}
-            alt={songData?.data?.name}
+            src={songData?.albumArt}
+            alt={songData?.name}
             width={50}
             height={50}
             quality={50}
@@ -33,21 +34,21 @@ const SongActivity = async () => {
               width={20}
               height={20}
               className={`h-3 w-3 text-neutral-600 ${
-                songData?.data?.isPlaying ? "animate-pulse" : ""
+                songData?.isPlaying ? "animate-pulse" : ""
               }`}
             />
-            {songData?.data?.isPlaying ? "Now Playing" : "Last Played"}
+            {songData?.isPlaying ? "Now Playing" : "Last Played"}
           </span>
           <span className={`flex flex-col text-sm font-bold`}>
-            {songData?.data?.name}
+            {songData?.name}
             <span className="text-xs text-neutral-500">
               {" "}
-              by: {songData?.data?.artists}
+              by: {songData?.artists}
             </span>
           </span>
         </div>
       </div>
-      <Link href={songData?.data?.url}>
+      <Link href={songData?.url}>
         <Play size={18} className="text-neutral-600" />
       </Link>
     </div>
