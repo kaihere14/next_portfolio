@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 const CurlGuide = () => {
   return (
-    <div className="min-h-screen bg-white font-sans transition-colors duration-300 dark:bg-neutral-950 dark:text-white">
+    <div className="min-h-screen overflow-x-hidden bg-white font-sans transition-colors duration-300 dark:bg-neutral-950 dark:text-white">
       <main className="relative z-10 mx-auto max-w-3xl px-6 pt-8 pb-32">
         <header className="mb-20">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-neutral-200 px-3 py-1 text-[10px] font-bold tracking-[0.15em] text-neutral-600 uppercase dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400">
@@ -58,7 +58,7 @@ const CurlGuide = () => {
           />
         </div>
 
-        <article className="space-y-16 text-neutral-700 dark:text-neutral-300">
+        <article className="space-y-16 break-words text-neutral-700 dark:text-neutral-300">
           <section>
             <h2 className="mb-6 text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">
               What is cURL (in very simple terms)
@@ -116,7 +116,7 @@ const CurlGuide = () => {
               <h3 className="mb-4 text-lg font-bold text-neutral-900 dark:text-white">
                 Some Usage:
               </h3>
-              <div className="overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800">
+              <div className="overflow-x-auto rounded-xl border border-neutral-200 dark:border-neutral-800">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="bg-neutral-100 dark:bg-neutral-800">
@@ -215,13 +215,11 @@ const CurlGuide = () => {
                 Sending data with a POST request:
               </h3>
               <div className="overflow-x-auto rounded-xl border border-neutral-800 bg-neutral-900 p-5 font-mono text-sm">
-                <pre className="text-green-400">
-                  {`#!/bin/bash
-
-                                        curl -X POST \\
-                                        -H "Content-Type: application/json" \\
-                                        -d '{"name": "Ba3a", "email": "someMail@gmail.com"}' \\
-                                        https://crud.ba3a.tech/users`}
+                <pre className="break-all whitespace-pre-wrap text-green-400">
+                  {`curl -X POST \\
+  -H "Content-Type: application/json" \\
+  -d '{"name": "Ba3a", "email": "someMail@gmail.com"}' \\
+  https://crud.ba3a.tech/users`}
                 </pre>
               </div>
 
@@ -246,12 +244,12 @@ const CurlGuide = () => {
                   ].map(([flag, desc], i) => (
                     <li
                       key={i}
-                      className="flex gap-3 rounded-lg border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-800/50 dark:bg-neutral-900/30"
+                      className="flex flex-col gap-2 rounded-lg border border-neutral-200 bg-neutral-50 p-4 sm:flex-row sm:gap-3 dark:border-neutral-800/50 dark:bg-neutral-900/30"
                     >
-                      <code className="shrink-0 text-neutral-600 dark:text-neutral-400">
+                      <code className="shrink-0 break-words text-neutral-600 dark:text-neutral-400">
                         {flag}
                       </code>
-                      <span className="text-neutral-600 dark:text-neutral-400">
+                      <span className="break-words text-neutral-600 dark:text-neutral-400">
                         {desc}
                       </span>
                     </li>
