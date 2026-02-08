@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Metadata } from "next";
+import Link from "next/link";
 
 import {
   ArrowRight,
@@ -406,18 +407,27 @@ const DnsWorking = () => {
             </p>
           </div>
           <div className="flex gap-6">
-            <Twitter
-              className="cursor-pointer text-neutral-400 transition-colors hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-white"
-              size={20}
-            />
-            <Linkedin
-              className="cursor-pointer text-neutral-400 transition-colors hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-white"
-              size={20}
-            />
-            <Github
-              className="cursor-pointer text-neutral-400 transition-colors hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-white"
-              size={20}
-            />
+            <Link href="https://x.com/ArmanKiyotaka" target="_blank">
+              <Twitter
+                className="cursor-pointer text-neutral-400 transition-colors hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-white"
+                size={20}
+              />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/arman-thakur-303b47367"
+              target="_blank"
+            >
+              <Linkedin
+                className="cursor-pointer text-neutral-400 transition-colors hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-white"
+                size={20}
+              />
+            </Link>
+            <Link href="https://github.com/kaihere14" target="_blank">
+              <Github
+                className="cursor-pointer text-neutral-400 transition-colors hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-white"
+                size={20}
+              />
+            </Link>
           </div>
         </footer>
       </main>
