@@ -21,10 +21,8 @@ let themeListeners: Array<() => void> = [];
 const themeStore = {
   getSnapshot: (): boolean => {
     const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    return savedTheme === "dark" || (!savedTheme && prefersDark);
+    // Default to light theme if no preference is saved
+    return savedTheme === "dark";
   },
   getServerSnapshot: (): boolean => {
     // Return consistent value for SSR - will be updated on client
