@@ -7,6 +7,7 @@ import Footer from "@/components/Footer/Footer";
 import GitHub from "@/components/GitHub/GitHub";
 import Hero from "@/components/HeroSection/Hero";
 import Projects from "@/components/Projects/Projects";
+import FooterBlur from "@/components/Navbar/FooterBlur";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://armandev.space"; // Replace with your actual domain
 
@@ -68,6 +69,7 @@ const page = () => {
       <GitHub />
       <Achievments />
       <Footer />
+      <FooterBlur/>
     </div>
   );
 };
