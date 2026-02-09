@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import FooterBlur from "@/components/Footer/FooterBlur";
 import NavBar from "@/components/Navbar/NavBar";
 import { ThemeProvider } from "@/hooks/ThemeProvider";
 
 import "./globals.css";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,6 +53,7 @@ export default function RootLayout({
         <ThemeProvider>
           <NavBar />
           {children}
+          <FooterBlur />
         </ThemeProvider>
       </body>
     </html>
