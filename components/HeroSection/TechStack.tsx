@@ -6,6 +6,21 @@ import { useTheme } from "@/hooks/ThemeProvider";
 
 export const techStack = [
   {
+    name: "JavaScript",
+    icon: "https://skillicons.dev/icons?i=js",
+    desc: "Language",
+  },
+  {
+    name: "TypeScript",
+    icon: "https://skillicons.dev/icons?i=ts",
+    desc: "Language",
+  },
+  {
+    name: "Python",
+    icon: "https://skillicons.dev/icons?i=python",
+    desc: "Language",
+  },
+  {
     name: "React",
     icon: "https://skillicons.dev/icons?i=react",
     desc: "UI Library",
@@ -14,6 +29,11 @@ export const techStack = [
     name: "Next.js",
     icon: "https://skillicons.dev/icons?i=next",
     desc: "Framework",
+  },
+  {
+    name: "Tailwind",
+    icon: "https://skillicons.dev/icons?i=tailwind",
+    desc: "Styling",
   },
   {
     name: "Node.js",
@@ -36,19 +56,9 @@ export const techStack = [
     desc: "Caching",
   },
   {
-    name: "Socket.io",
-    icon: "https://cdn.simpleicons.org/socketdotio/white",
-    desc: "Real-time",
-  },
-  {
-    name: "Tailwind",
-    icon: "https://skillicons.dev/icons?i=tailwind",
-    desc: "Styling",
-  },
-  {
-    name: "Vercel",
-    icon: "https://skillicons.dev/icons?i=vercel",
-    desc: "Deployment",
+    name: "Docker",
+    icon: "https://skillicons.dev/icons?i=docker",
+    desc: "Containerization",
   },
   {
     name: "Nginx",
@@ -56,19 +66,49 @@ export const techStack = [
     desc: "Web Server",
   },
   {
-    name: "Postman",
-    icon: "https://skillicons.dev/icons?i=postman",
-    desc: "API Testing",
-  },
-  {
     name: "Git",
     icon: "https://skillicons.dev/icons?i=git",
     desc: "Version Control",
   },
   {
+    name: "Vercel",
+    icon: "https://skillicons.dev/icons?i=vercel",
+    desc: "Deployment",
+  },
+  {
+    name: "Framer Motion",
+    icon: "https://cdn.simpleicons.org/framer/white",
+    desc: "Animations",
+  },
+  {
+    name: "Socket.io",
+    icon: "https://cdn.simpleicons.org/socketdotio/white",
+    desc: "Real-time",
+  },
+  {
+    name: "Linux",
+    icon: "https://skillicons.dev/icons?i=linux",
+    desc: "Operating System",
+  },
+  {
+    name: "Postman",
+    icon: "https://skillicons.dev/icons?i=postman",
+    desc: "API Testing",
+  },
+  {
     name: "GSAP",
     icon: "https://cdn.simpleicons.org/greensock/white",
     desc: "Animations",
+  },
+  {
+    name: "Google Gemini",
+    icon: "https://cdn.simpleicons.org/googlegemini/white",
+    desc: "AI API",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "https://skillicons.dev/icons?i=postgres",
+    desc: "Database",
   },
 ];
 
@@ -77,8 +117,8 @@ const TechStack = () => {
 
   // Get icon URL, swapping color for simpleicons based on theme
   const getIconUrl = (tech: { name: string; icon: string }) => {
-    if (tech.name === "Socket.io" || tech.name === "GSAP") {
-      return isDark ? tech.icon : tech.icon.replace("white", "black");
+    if (tech.icon.includes("simpleicons.org")) {
+      return isDark ? tech.icon : tech.icon.replace("/white", "/black");
     }
     return tech.icon;
   };
@@ -92,7 +132,7 @@ const TechStack = () => {
           Tech Stack & Tools
         </h2>
       </div>
-      <div className="flex w-full flex-wrap justify-center gap-3">
+      <div className="flex w-full flex-wrap gap-3">
         {techStack.map((tech) => (
           <div key={tech.name} className="group relative">
             {/* Icon Container */}
