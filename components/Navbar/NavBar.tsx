@@ -38,10 +38,7 @@ const NavBar = () => {
       <div>
         <button
           onClick={toggleTheme}
-          className="cursor-pointer rounded-lg bg-neutral-100 p-3 text-neutral-500 transition-all duration-200 hover:text-amber-500 sm:p-[10px] dark:bg-zinc-950 dark:text-white/80 dark:hover:text-yellow-400"
-          style={{
-            boxShadow: "var(--nav-button-shadow)",
-          }}
+          className="cursor-pointer rounded-lg bg-neutral-100 p-3 text-neutral-500 shadow-[0_4px_0_0_rgba(0,0,0,0.15)] transition-all duration-200 hover:translate-y-[2px] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none sm:p-[10px] dark:bg-[#1e1e21] dark:text-white/80 dark:shadow-[0_4px_0_0_#0a0a0a] dark:hover:shadow-[0_2px_0_0_#0a0a0a] dark:active:shadow-none"
           aria-label="Toggle theme"
         >
           {isDark ? <Sun size={18} /> : <Moon size={18} />}

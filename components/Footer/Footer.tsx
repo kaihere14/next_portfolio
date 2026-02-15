@@ -29,19 +29,19 @@ const Footer = () => {
         <div className="flex gap-3">
           <a
             href="https://github.com/kaihere14"
-            className={`hover: rounded-xl border bg-neutral-100 bg-neutral-200 p-3 transition-all duration-300 hover:scale-110 dark:bg-neutral-800 dark:bg-neutral-900`}
+            className="rounded-xl border bg-neutral-100 p-3 shadow-[0_4px_0_0_rgba(0,0,0,0.15)] transition-all duration-300 hover:translate-y-[2px] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none dark:bg-neutral-800 dark:shadow-[0_4px_0_0_rgba(0,0,0,0.4)] dark:hover:shadow-[0_2px_0_0_rgba(0,0,0,0.4)] dark:active:shadow-none"
           >
             <Github size={22} />
           </a>
           <a
             href="https://www.linkedin.com/in/arman-thakur14/"
-            className={`hover: rounded-xl border bg-neutral-100 bg-neutral-200 p-3 transition-all duration-300 hover:scale-110 hover:border-blue-900/50 hover:text-blue-400 dark:bg-neutral-800 dark:bg-neutral-900`}
+            className="rounded-xl border bg-neutral-100 p-3 shadow-[0_4px_0_0_rgba(0,0,0,0.15)] transition-all duration-300 hover:translate-y-[2px] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none dark:bg-neutral-800 dark:shadow-[0_4px_0_0_rgba(0,0,0,0.4)] dark:hover:shadow-[0_2px_0_0_rgba(0,0,0,0.4)] dark:active:shadow-none"
           >
             <Linkedin size={22} />
           </a>
           <a
             href="mailto:armanthakur200814@gmail.com"
-            className={`hover: bg-neutral-200hover:scale-110 rounded-xl border bg-neutral-100 p-3 transition-all duration-300 hover:border-purple-900/50 hover:text-purple-400 dark:bg-neutral-800 dark:bg-neutral-900`}
+            className="rounded-xl border bg-neutral-100 p-3 shadow-[0_4px_0_0_rgba(0,0,0,0.15)] transition-all duration-300 hover:translate-y-[2px] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none dark:bg-neutral-800 dark:shadow-[0_4px_0_0_rgba(0,0,0,0.4)] dark:hover:shadow-[0_2px_0_0_rgba(0,0,0,0.4)] dark:active:shadow-none"
           >
             <Mail size={22} />
           </a>

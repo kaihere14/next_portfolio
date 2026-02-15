@@ -66,7 +66,7 @@ const GitHub = async () => {
             href="https://github.com/kaihere14"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full border border-neutral-300 bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-700 transition-all hover:border-neutral-400 hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:border-neutral-600 dark:hover:bg-neutral-700"
+            className="flex items-center gap-2 rounded-full border border-neutral-300 bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-700 shadow-[0_4px_0_0_rgba(0,0,0,0.15)] transition-all hover:translate-y-[2px] hover:border-neutral-400 hover:bg-neutral-200 hover:shadow-[0_2px_0_0_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:shadow-[0_4px_0_0_rgba(0,0,0,0.4)] dark:hover:border-neutral-600 dark:hover:bg-neutral-700 dark:hover:shadow-[0_2px_0_0_rgba(0,0,0,0.4)] dark:active:shadow-none"
           >
             <svg
               className="h-4 w-4"

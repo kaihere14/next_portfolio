@@ -43,7 +43,7 @@ const ProjectsGrid = ({ projects, initialCount = 4 }: ProjectsGridProps) => {
         <div className="mt-8 flex justify-center">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="group flex cursor-pointer items-center gap-2 rounded-full border border-neutral-300 bg-neutral-100 px-6 py-2.5 text-sm font-medium text-neutral-700 transition-all hover:border-neutral-400 hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:border-neutral-600 dark:hover:bg-neutral-700"
+            className="group flex cursor-pointer items-center gap-2 rounded-full border border-neutral-300 bg-neutral-100 px-6 py-2.5 text-sm font-medium text-neutral-700 shadow-[0_4px_0_0_rgba(0,0,0,0.15)] transition-all hover:border-neutral-400 hover:bg-neutral-200 hover:shadow-[0_2px_0_0_rgba(0,0,0,0.15)] hover:translate-y-[2px] active:shadow-none active:translate-y-[4px] dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:shadow-[0_4px_0_0_rgba(0,0,0,0.4)] dark:hover:border-neutral-600 dark:hover:bg-neutral-700 dark:hover:shadow-[0_2px_0_0_rgba(0,0,0,0.4)] dark:active:shadow-none"
           >
             {showAll ? (
               <>
