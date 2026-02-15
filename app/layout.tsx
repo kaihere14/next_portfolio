@@ -52,6 +52,31 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
+          {/* Decorative diagonal stripe borders flush with content */}
+          <div
+            className="pointer-events-none fixed inset-y-0 z-[999] hidden w-[60px] overflow-hidden sm:block"
+            style={{ left: "calc(50% - 360px - 60px)" }}
+          >
+            <div
+              className="absolute inset-0 h-full w-[60px] border border-[#000]/70 opacity-[0.06] dark:border-[#eee] dark:opacity-[0.04]"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(-45deg, transparent, transparent 2px, currentcolor 2px, currentcolor 3px, transparent 3px, transparent 6px)",
+              }}
+            />
+          </div>
+          <div
+            className="pointer-events-none fixed inset-y-0 z-[999] hidden w-[60px] overflow-hidden sm:block"
+            style={{ left: "calc(50% + 362px)" }}
+          >
+            <div
+              className="absolute inset-0 h-full w-[60px] border border-[#000]/70 opacity-[0.06] dark:border-[#eee] dark:opacity-[0.04]"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(-45deg, transparent, transparent 2px, currentcolor 2px, currentcolor 3px, transparent 3px, transparent 6px)",
+              }}
+            />
+          </div>
           <NavBar />
           {children}
           <FooterBlur />
