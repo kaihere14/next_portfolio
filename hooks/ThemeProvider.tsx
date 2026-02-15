@@ -21,12 +21,12 @@ let themeListeners: Array<() => void> = [];
 const themeStore = {
   getSnapshot: (): boolean => {
     const savedTheme = localStorage.getItem("theme");
-    // Default to light theme if no preference is saved
-    return savedTheme === "dark";
+    // Default to dark theme if no preference is saved
+    return savedTheme !== "light";
   },
   getServerSnapshot: (): boolean => {
-    // Return consistent value for SSR - will be updated on client
-    return false;
+    // Return consistent value for SSR - default to dark
+    return true;
   },
   subscribe: (listener: () => void): (() => void) => {
     themeListeners.push(listener);
