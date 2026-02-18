@@ -17,13 +17,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-
       - name: Install dependencies
         run: npm install
 
       - name: Lint code
         run: npm run lint
-
 
   format:
     name: format
@@ -39,17 +37,17 @@ jobs:
         run: npm run format
 
   check-types:
-      name: check-types
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v4
+    name: check-types
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-        - name: Install dependencies
-          run: npm install
+      - name: Install dependencies
+        run: npm install
 
-        - name: Check types
-          run: npm run check-types
+      - name: Check types
+        run: npm run check-types
 
   build:
     name: build
