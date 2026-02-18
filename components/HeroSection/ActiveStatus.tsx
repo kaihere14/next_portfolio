@@ -69,7 +69,7 @@ const ActiveStatus = () => {
             stiffness: 200,
             damping: 20,
           }}
-          className="absolute -bottom-2 left-[110px] z-20 flex w-max flex-col gap-2 rounded-xl border bg-white/80 p-3 shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-black/80"
+          className="absolute -bottom-2 left-[110px] z-20 flex w-max flex-col gap-2 rounded-xl border bg-white/80 p-3 shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-[#161618]"
         >
           <div className="flex items-center gap-2">
             <div className="relative">
