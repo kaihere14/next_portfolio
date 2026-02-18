@@ -62,7 +62,7 @@ const posts = [
 
 const BlogsPage = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white pb-32 font-sans transition-colors duration-300 dark:bg-neutral-950 dark:text-white">
+    <div className="min-h-screen overflow-x-hidden bg-white pb-32 font-sans transition-colors duration-300 dark:bg-[#161618] dark:text-white">
       <main className="relative z-10 mx-auto max-w-3xl px-6 pt-8">
         <div className="mb-16 space-y-4 text-center">
           <h1 className="text-5xl font-bold tracking-tight">Blogs</h1>

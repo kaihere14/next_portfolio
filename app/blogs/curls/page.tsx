@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 const CurlGuide = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white font-sans transition-colors duration-300 dark:bg-neutral-950 dark:text-white">
+    <div className="min-h-screen overflow-x-hidden bg-white font-sans transition-colors duration-300 dark:bg-[#161618] dark:text-white">
       <main className="relative z-10 mx-auto max-w-3xl px-6 pt-8 pb-32">
         <header className="mb-20">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-neutral-200 px-3 py-1 text-[10px] font-bold tracking-[0.15em] text-neutral-600 uppercase dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400">

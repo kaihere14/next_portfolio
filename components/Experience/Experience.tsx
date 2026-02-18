@@ -57,7 +57,7 @@ const Experience = () => {
                 >
                   <ChevronRight
                     size={16}
-                    className="mt-0.5 shrink-0 text-orange-400 transition-transform group-hover/item:translate-x-0.5"
+                    className="mt-0.5 shrink-0 transition-transform group-hover/item:translate-x-0.5"
                   />
                   <span className="leading-relaxed">{highlight}</span>
                 </li>
