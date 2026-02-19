@@ -12,6 +12,7 @@ const SocialImageContainer = ({ image }: { image: string }) => {
         alt="social image"
         width={300}
         height={300}
+        loading="eager"
         className="rounded-2xl"
       />
     </div>

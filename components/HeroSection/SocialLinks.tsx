@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import Link from "next/link";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import SocialImageContainer from "./SocialImageContainer";
 
@@ -17,19 +17,14 @@ const SocialLinks = () => {
   return (
     <div className="mt-8 flex gap-2 font-bold">
       <div className="relative">
-        <AnimatePresence>
-          {xHover && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute bottom-10 w-[300px]"
-            >
-              <SocialImageContainer image="/x.webp" />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.div
+          initial={false}
+          animate={xHover ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          transition={{ duration: 0.3 }}
+          className="pointer-events-none absolute bottom-10 w-[300px]"
+        >
+          <SocialImageContainer image="/x.webp" />
+        </motion.div>
         <div
           onMouseEnter={() => setXHover(true)}
           onMouseLeave={() => setXHover(false)}
@@ -57,19 +52,14 @@ const SocialLinks = () => {
       </div>
 
       <div className="relative">
-        <AnimatePresence>
-          {linkedinHover && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute bottom-10 w-[300px]"
-            >
-              <SocialImageContainer image="/linkedin.webp" />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.div
+          initial={false}
+          animate={linkedinHover ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          transition={{ duration: 0.3 }}
+          className="pointer-events-none absolute bottom-10 w-[300px]"
+        >
+          <SocialImageContainer image="/linkedin.webp" />
+        </motion.div>
         <div
           onMouseEnter={() => setLinkedinHover(true)}
           onMouseLeave={() => setLinkedinHover(false)}
@@ -97,19 +87,14 @@ const SocialLinks = () => {
       </div>
 
       <div className="relative">
-        <AnimatePresence>
-          {instaHover && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute bottom-10 w-[300px]"
-            >
-              <SocialImageContainer image="/instagram.webp" />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.div
+          initial={false}
+          animate={instaHover ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          transition={{ duration: 0.3 }}
+          className="pointer-events-none absolute bottom-10 w-[300px]"
+        >
+          <SocialImageContainer image="/instagram.webp" />
+        </motion.div>
         <div
           onMouseEnter={() => setInstaHover(true)}
           onMouseLeave={() => setInstaHover(false)}
@@ -137,19 +122,16 @@ const SocialLinks = () => {
       </div>
 
       <div className="relative">
-        <AnimatePresence>
-          {pinterestHover && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute bottom-10 w-[300px]"
-            >
-              <SocialImageContainer image="/pinterest.webp" />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.div
+          initial={false}
+          animate={
+            pinterestHover ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
+          }
+          transition={{ duration: 0.3 }}
+          className="pointer-events-none absolute bottom-10 w-[300px]"
+        >
+          <SocialImageContainer image="/pinterest.webp" />
+        </motion.div>
         <div
           onMouseEnter={() => setPinterestHover(true)}
           onMouseLeave={() => setPinterestHover(false)}
