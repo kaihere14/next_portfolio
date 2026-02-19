@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 import { Clock } from "lucide-react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 import type { LanyardData, LanyardResponse } from "@/types/discord";
 import { CodeTime } from "@/types/wakatime";
@@ -60,40 +60,45 @@ const ActiveStatus = () => {
           className={`border-background absolute right-[4] bottom-[4] size-2 rounded-full ${color}`}
         />
       </div>
-      {isDisplaying && (
-        <motion.div
-          initial={{ opacity: 0, y: 4, filter: "blur(4px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{
-            type: "spring",
-            stiffness: 200,
-            damping: 20,
-          }}
-          className="absolute -bottom-2 left-[110px] z-20 flex w-max flex-col gap-2 rounded-xl border bg-white/80 p-3 shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-[#161618]"
-        >
-          <div className="flex items-center gap-2">
-            <div className="relative">
-              <div
-                className={`absolute -inset-1 animate-pulse rounded-full ${color}/20`}
-              />
-              <div className={`relative size-2 rounded-full ${color}`} />
-            </div>
-            <span className="text-xs font-semibold tracking-wider text-neutral-500 uppercase">
-              {label}
-            </span>
-          </div>
-
-          {codeTime && (
-            <div className="flex items-center gap-2 rounded-lg border border-dashed border-black/20 bg-black/5 px-2.5 py-1.5 dark:border-white/20 dark:bg-white/5">
-              <Clock size={13} className="text-neutral-500" />
-              <span className="text-xs font-bold text-black dark:text-white">
-                {codeTime.hours}h {codeTime.minutes}m
+      <AnimatePresence>
+        {isDisplaying && (
+          <motion.div
+            initial={{ opacity: 0, y: 4, filter: "blur(4px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 20,
+            }}
+            className="absolute -bottom-2 left-[110px] z-20 flex w-max flex-col gap-2 rounded-xl border bg-white/80 p-3 shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-[#161618]"
+          >
+            <div className="flex items-center gap-2">
+              <div className="relative">
+                <div
+                  className={`absolute -inset-1 animate-pulse rounded-full ${color}/20`}
+                />
+                <div className={`relative size-2 rounded-full ${color}`} />
+              </div>
+              <span className="text-xs font-semibold tracking-wider text-neutral-500 uppercase">
+                {label}
               </span>
-              <span className="text-[10px] text-neutral-400">coded today</span>
             </div>
-          )}
-        </motion.div>
-      )}
+
+            {codeTime && (
+              <div className="flex items-center gap-2 rounded-lg border border-dashed border-black/20 bg-black/5 px-2.5 py-1.5 dark:border-white/20 dark:bg-white/5">
+                <Clock size={13} className="text-neutral-500" />
+                <span className="text-xs font-bold text-black dark:text-white">
+                  {codeTime.hours}h {codeTime.minutes}m
+                </span>
+                <span className="text-[10px] text-neutral-400">
+                  coded today
+                </span>
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
