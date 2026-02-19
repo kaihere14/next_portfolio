@@ -21,7 +21,7 @@ const SocialLinks = () => {
           initial={false}
           animate={xHover ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
           transition={{ duration: 0.3 }}
-          className="pointer-events-none absolute bottom-10 w-[300px]"
+          className="pointer-events-none absolute bottom-10 hidden w-[300px] md:block"
         >
           <SocialImageContainer image="/x.webp" />
         </motion.div>
@@ -56,7 +56,7 @@ const SocialLinks = () => {
           initial={false}
           animate={linkedinHover ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
           transition={{ duration: 0.3 }}
-          className="pointer-events-none absolute bottom-10 w-[300px]"
+          className="pointer-events-none absolute bottom-10 hidden w-[300px] md:block"
         >
           <SocialImageContainer image="/linkedin.webp" />
         </motion.div>
@@ -91,7 +91,7 @@ const SocialLinks = () => {
           initial={false}
           animate={instaHover ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
           transition={{ duration: 0.3 }}
-          className="pointer-events-none absolute bottom-10 w-[300px]"
+          className="pointer-events-none absolute bottom-10 hidden w-[300px] md:block"
         >
           <SocialImageContainer image="/instagram.webp" />
         </motion.div>
@@ -128,7 +128,7 @@ const SocialLinks = () => {
             pinterestHover ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
           }
           transition={{ duration: 0.3 }}
-          className="pointer-events-none absolute bottom-10 w-[300px]"
+          className="pointer-events-none absolute bottom-10 hidden w-[300px] md:block"
         >
           <SocialImageContainer image="/pinterest.webp" />
         </motion.div>
