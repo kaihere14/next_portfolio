@@ -49,6 +49,25 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <link rel="preload" href="/Logo.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/x.webp" as="image" type="image/webp" />
+        <link
+          rel="preload"
+          href="/linkedin.webp"
+          as="image"
+          type="image/webp"
+        />
+        <link
+          rel="preload"
+          href="/instagram.webp"
+          as="image"
+          type="image/webp"
+        />
+        <link
+          rel="preload"
+          href="/pinterest.webp"
+          as="image"
+          type="image/webp"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
