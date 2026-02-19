@@ -48,6 +48,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <link rel="preload" href="/Logo.webp" as="image" type="image/webp" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

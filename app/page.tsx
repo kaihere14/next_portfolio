@@ -8,6 +8,7 @@ import FooterBlur from "@/components/Footer/FooterBlur";
 import GitHub from "@/components/GitHub/GitHub";
 import Hero from "@/components/HeroSection/Hero";
 import Projects from "@/components/Projects/Projects";
+import FadeIn from "@/components/ui/FadeIn";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://armandev.space"; // Replace with your actual domain
 
@@ -62,13 +63,27 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div className="mx-auto max-w-[720px] px-8 md:px-0">
-      <Hero />
-      <Experience />
-      <Projects />
-      <AboutMe />
-      <GitHub />
-      <Achievments />
-      <Footer />
+      <FadeIn>
+        <Hero />
+      </FadeIn>
+      <FadeIn>
+        <Experience />
+      </FadeIn>
+      <FadeIn>
+        <Projects />
+      </FadeIn>
+      <FadeIn>
+        <AboutMe />
+      </FadeIn>
+      <FadeIn>
+        <GitHub />
+      </FadeIn>
+      <FadeIn>
+        <Achievments />
+      </FadeIn>
+      <FadeIn>
+        <Footer />
+      </FadeIn>
     </div>
   );
 };
