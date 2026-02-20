@@ -10,7 +10,7 @@ import {
 
 interface ThemeContextType {
   isDark: boolean;
-  toggleTheme: () => void;
+  toggleTheme: (x?: number, y?: number) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -55,20 +55,55 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [isDark]);
 
-  const toggleTheme = useCallback(() => {
-    const currentIsDark = themeStore.getSnapshot();
-    const newIsDark = !currentIsDark;
+  const toggleTheme = useCallback((x?: number, y?: number) => {
+    const applyTheme = () => {
+      const currentIsDark = themeStore.getSnapshot();
+      const newIsDark = !currentIsDark;
 
-    if (newIsDark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
+      if (newIsDark) {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      }
+
+      themeStore.emitChange();
+    };
+
+    // Fallback for browsers without View Transition API
+    if (
+      !document.startViewTransition ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      applyTheme();
+      return;
     }
 
-    // Notify subscribers of the change
-    themeStore.emitChange();
+    const clickX = x ?? window.innerWidth - 24;
+    const clickY = y ?? 24;
+    const endRadius = Math.hypot(
+      Math.max(clickX, window.innerWidth - clickX),
+      Math.max(clickY, window.innerHeight - clickY)
+    );
+
+    const transition = document.startViewTransition(applyTheme);
+
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        {
+          clipPath: [
+            `circle(0px at ${clickX}px ${clickY}px)`,
+            `circle(${endRadius}px at ${clickX}px ${clickY}px)`,
+          ],
+        },
+        {
+          duration: 500,
+          easing: "ease-in-out",
+          pseudoElement: "::view-transition-new(root)",
+        }
+      );
+    });
   }, []);
 
   return (
