@@ -2,6 +2,8 @@
 
 import dynamic from "next/dynamic";
 
+import { useTheme } from "@/hooks/ThemeProvider";
+
 // Dynamically import with SSR disabled to avoid hydration mismatch
 const GitHubCalendar = dynamic(
   () => import("react-github-calendar").then((mod) => mod.GitHubCalendar),
@@ -20,11 +22,13 @@ interface GitHubCalendarClientProps {
 }
 
 const GitHubCalendarClient = ({ username }: GitHubCalendarClientProps) => {
+  const { isDark } = useTheme();
+
   return (
     <div className="flex w-full justify-center overflow-x-auto pt-4">
       <GitHubCalendar
         username={username}
-        colorScheme="dark"
+        colorScheme={isDark ? "dark" : "light"}
         blockSize={7}
         blockMargin={4}
         fontSize={14}
