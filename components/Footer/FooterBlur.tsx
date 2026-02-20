@@ -1,11 +1,8 @@
-import { ProgressiveBlur } from "@/components/ui/progressive-blur";
-
 const FooterBlur = () => {
   return (
-    <ProgressiveBlur
-      className="fixed! inset-x-0 bottom-0 z-10"
-      height="60px"
-      position="bottom"
+    <div
+      className="from-background pointer-events-none fixed inset-x-0 bottom-0 z-10 h-[50px] bg-gradient-to-t to-transparent [mask-image:linear-gradient(to_top,black_50%,transparent)] opacity-100 backdrop-blur-[5px] select-none [-webkit-mask-image:linear-gradient(to_top,black_50%,transparent)] dark:[mask-image:linear-gradient(to_top,black_50%,transparent)] dark:[-webkit-mask-image:linear-gradient(to_top,black_50%,transparent)]"
+      style={{ userSelect: "none" }}
     />
   );
 };

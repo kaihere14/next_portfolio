@@ -4,6 +4,7 @@ import AboutMe from "@/components/AboutMe/AboutMe";
 import Achievments from "@/components/Achievments/Achievments";
 import Experience from "@/components/Experience/Experience";
 import Footer from "@/components/Footer/Footer";
+import FooterBlur from "@/components/Footer/FooterBlur";
 import GitHub from "@/components/GitHub/GitHub";
 import Hero from "@/components/HeroSection/Hero";
 import Projects from "@/components/Projects/Projects";
