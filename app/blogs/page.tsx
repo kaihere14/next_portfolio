@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 
 import BlogList from "@/components/Blogs/BlogList";
+import FadeIn from "@/components/ui/FadeIn";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://armandev.space";
 
@@ -72,15 +73,19 @@ const BlogsPage = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-white pb-32 font-sans transition-colors duration-300 dark:bg-[#161618] dark:text-white">
       <main className="relative z-10 mx-auto max-w-3xl px-6 pt-8">
-        <div className="mb-16 space-y-4 text-center">
-          <h1 className="text-5xl font-bold tracking-tight">Blogs</h1>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400">
-            Thoughts, tutorials, and insights on engineering, and programming.
-          </p>
-          <div className="mx-auto mt-8 h-px w-full max-w-sm bg-neutral-200 dark:bg-neutral-800" />
-        </div>
+        <FadeIn>
+          <div className="mb-16 space-y-4 text-center">
+            <h1 className="text-5xl font-bold tracking-tight">Blogs</h1>
+            <p className="text-lg text-neutral-600 dark:text-neutral-400">
+              Thoughts, tutorials, and insights on engineering, and programming.
+            </p>
+            <div className="mx-auto mt-8 h-px w-full max-w-sm bg-neutral-200 dark:bg-neutral-800" />
+          </div>
+        </FadeIn>
 
-        <BlogList posts={posts} />
+        <FadeIn>
+          <BlogList posts={posts} />
+        </FadeIn>
       </main>
     </div>
   );

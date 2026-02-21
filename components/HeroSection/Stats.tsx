@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Code, Cpu, GitBranch, Layers } from "lucide-react";
+import { Code, Cpu, GitBranch, Layers, MapPin } from "lucide-react";
 
 export const stats = [
   {
@@ -18,9 +18,9 @@ export const stats = [
     icon: Cpu,
   },
   {
-    label: "Lines of Code",
-    value: "15k+",
-    icon: Code,
+    label: "Based in",
+    value: "Himachal Pradesh",
+    icon: MapPin,
   },
 ];
 
@@ -54,10 +54,10 @@ export const Stats = async () => {
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="flex flex-col items-start gap-2 rounded-2xl border-2 p-4"
+          className="flex flex-col items-start justify-between gap-2 rounded-2xl border-2 p-4"
         >
           <stat.icon className="text-black dark:text-white" />
-          <span>{stat.value}</span>
+          <span className="text-base whitespace-nowrap">{stat.value}</span>
           <span className="text-xs">{stat.label}</span>
         </div>
       ))}

@@ -24,6 +24,8 @@ const getTechIcon = (tech: string) => {
     dns2: "https://skillicons.dev/icons?i=nodejs",
     dotenv: "https://skillicons.dev/icons?i=nodejs",
     Gemini: "https://skillicons.dev/icons?i=gcp",
+    "Google Calendar API": "https://cdn.simpleicons.org/googlecalendar",
+    Resend: "https://cdn.simpleicons.org/resend",
   };
   return iconMap[tech] || null;
 };
@@ -40,7 +42,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
           alt={name}
           width={500}
           height={300}
-          className="h-full w-full transform object-cover transition-all duration-500 group-hover:scale-105"
+          className="h-full w-full scale-105 transform object-cover transition-all duration-500 group-hover:scale-110"
           style={{ transformOrigin: "center center" }}
         />
       </div>
@@ -61,12 +63,10 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
         </p>
 
         {/* Technologies Label */}
-        <p className="mb-2 text-xs font-semibold tracking-wider text-neutral-500 uppercase">
-          Technologies
-        </p>
 
         {/* Tech Stack */}
-        <div className="flex flex-1 flex-wrap gap-2">
+
+        <div className="flex flex-1 flex-wrap content-end gap-2">
           {tech.map((t) => (
             <span
               key={t}

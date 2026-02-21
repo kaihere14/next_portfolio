@@ -38,7 +38,7 @@ const ActiveStatus = () => {
         console.error(err);
       }
 
-      timeoutId = setTimeout(fetchDiscord, 10000);
+      timeoutId = setTimeout(fetchDiscord, 120000);
     };
 
     fetchDiscord();
