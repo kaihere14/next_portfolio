@@ -28,6 +28,14 @@ export const metadata: Metadata = {
       "Thoughts, tutorials, and insights on engineering, networking, and programming.",
     url: `${baseUrl}/blogs`,
     type: "website",
+    images: ["/og_image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog - Web Development Articles & Tutorials | Arman Thakur",
+    description:
+      "Thoughts, tutorials, and insights on engineering, networking, and programming.",
+    images: ["/og_image.png"],
   },
 };
 

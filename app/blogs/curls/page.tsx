@@ -26,6 +26,14 @@ export const metadata: Metadata = {
       "A comprehensive guide to understanding cURL, the command-line tool for making HTTP requests and testing APIs.",
     type: "article",
     publishedTime: "2026-01-18T00:00:00.000Z",
+    images: ["/og_image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "What is cURL and How to Use It | Arman Thakur",
+    description:
+      "A comprehensive guide to understanding cURL, the command-line tool for making HTTP requests and testing APIs.",
+    images: ["/og_image.png"],
   },
 };
 

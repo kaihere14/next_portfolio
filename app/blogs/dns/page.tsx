@@ -33,6 +33,14 @@ export const metadata: Metadata = {
       "A comprehensive guide to understanding DNS resolution, from recursive servers to authoritative nameservers.",
     type: "article",
     publishedTime: "2026-01-18T00:00:00.000Z",
+    images: ["/og_image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How DNS Resolution Works | Arman Thakur",
+    description:
+      "A comprehensive guide to understanding DNS resolution, from recursive servers to authoritative nameservers.",
+    images: ["/og_image.png"],
   },
 };
 

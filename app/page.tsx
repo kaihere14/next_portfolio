@@ -40,12 +40,21 @@ export const metadata: Metadata = {
     description:
       "Full Stack Developer specializing in React, Next.js, TypeScript & Node.js. Building scalable web apps with clean UI and great user experience.",
     siteName: "Arman Thakur Portfolio",
+    images: [
+      {
+        url: "/og_image.png",
+        width: 1200,
+        height: 630,
+        alt: "Arman Thakur Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Arman Thakur | Full Stack Developer & Web Engineer Portfolio",
     description:
       "Full Stack Developer specializing in React, Next.js, TypeScript & Node.js. Building scalable web apps with clean UI and great user experience.",
+    images: ["/og_image.png"],
   },
   robots: {
     index: true,
