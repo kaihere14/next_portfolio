@@ -6,7 +6,7 @@ const GetInTouch = () => {
   return (
     <div className="mt-6 flex gap-4">
       <Link
-        href="https://drive.google.com/file/d/1MiYa338p-Kd1vRRG6Aqa3G5FNEpI79Hb/view?usp=sharing"
+        href="https://drive.google.com/file/d/19mdBjYFPmGPOnyl6o2BDtaW30WiTZWP0/view?usp=sharing"
         target="_blank"
         className="flex items-center gap-2 rounded-md border border-neutral-700 bg-neutral-900 px-3 py-1.5 text-sm text-white shadow-[0_4px_0_0_#0a0a0a] transition-all duration-300 hover:translate-y-[2px] hover:bg-neutral-800 hover:shadow-[0_2px_0_0_#0a0a0a] active:translate-y-[4px] active:shadow-none"
       >
