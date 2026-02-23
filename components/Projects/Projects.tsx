@@ -50,7 +50,7 @@ const projects: ProjectType[] = [
     image: "/breathClean.webp",
     tech: ["Next.js", "React", "Pathway", "Express", "MongoDB", "Mapbox"],
     status: "All Systems Operational",
-    link: "https://breathclean.armandev.space",
+    link: "https://breathe.daemondoc.online/",
     githubLink: "https://github.com/kaihere14/BreathClean",
   },
   {
