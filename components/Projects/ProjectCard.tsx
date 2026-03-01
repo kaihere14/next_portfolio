@@ -23,6 +23,7 @@ const getTechIcon = (tech: string) => {
     "Cloudflare R2": "https://skillicons.dev/icons?i=cloudflare",
     dns2: "https://skillicons.dev/icons?i=nodejs",
     dotenv: "https://skillicons.dev/icons?i=nodejs",
+    Pathway: "https://skillicons.dev/icons?i=py",
     Gemini: "https://skillicons.dev/icons?i=gcp",
     "Google Calendar API": "https://cdn.simpleicons.org/googlecalendar",
     Resend: "https://cdn.simpleicons.org/resend",
@@ -63,10 +64,12 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
         </p>
 
         {/* Technologies Label */}
+        <p className="mt-auto mb-2 text-xs font-semibold tracking-wider text-neutral-500 uppercase">
+          Technologies
+        </p>
 
         {/* Tech Stack */}
-
-        <div className="flex flex-1 flex-wrap content-end gap-2">
+        <div className="flex flex-wrap gap-2">
           {tech.map((t) => (
             <span
               key={t}

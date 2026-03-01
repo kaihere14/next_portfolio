@@ -8,6 +8,7 @@ import FooterBlur from "@/components/Footer/FooterBlur";
 import GitHub from "@/components/GitHub/GitHub";
 import Hero from "@/components/HeroSection/Hero";
 import Projects from "@/components/Projects/Projects";
+import Testimonial from "@/components/Testimonial/Testimonial";
 import FadeIn from "@/components/ui/FadeIn";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://armandev.space"; // Replace with your actual domain
@@ -89,6 +90,9 @@ const page = () => {
       </FadeIn>
       <FadeIn>
         <Achievments />
+      </FadeIn>
+      <FadeIn>
+        <Testimonial />
       </FadeIn>
       <FadeIn>
         <Footer />
