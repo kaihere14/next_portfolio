@@ -68,6 +68,13 @@
 
 - Showcase of certifications, awards, and notable accomplishments
 
+### 🗣️ **Social Proof / Testimonial Video**
+
+- **Featured On Video Player** - Embeds a testimonial video with a custom thumbnail overlay.
+- **Click-Outside-to-Pause** - Automatically pauses the video if the user clicks outside the player area.
+- **Auto-Reset on End** - Video state resets to the thumbnail view once playback finishes.
+- **Interactive Play Button** - Overlay with a play icon that provides visual feedback on hover.
+
 ### 👨‍💻 **About Me**
 
 - Personal introduction with animated avatar
@@ -81,7 +88,6 @@
 - **Structured Data** - Proper heading hierarchy and semantic HTML
 
 ---
-
 ## 🛠️ Tech Stack
 
 ### **Core**
