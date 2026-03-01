@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Image from "next/image";
 
@@ -12,13 +12,29 @@ const THUMBNAIL = "https://img.youtube.com/vi/rifVkhqVpWQ/maxresdefault.jpg";
 const Testimonial = () => {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        playing &&
+        containerRef.current &&
+        !containerRef.current.contains(e.target as Node)
+      ) {
+        videoRef.current?.pause();
+        setPlaying(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [playing]);
 
   const handlePlay = () => {
     setPlaying(true);
     videoRef.current?.play();
   };
 
-  const handlePause = () => {
+  const handleEnded = () => {
     setPlaying(false);
   };
 
@@ -29,7 +45,10 @@ const Testimonial = () => {
       </h2>
       <h2 className="mb-6 text-3xl font-bold">Featured On</h2>
 
-      <div className="group relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-800">
+      <div
+        ref={containerRef}
+        className="group relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-800"
+      >
         <div className="relative pb-[56.25%]">
           <video
             ref={videoRef}
@@ -37,7 +56,7 @@ const Testimonial = () => {
             controls={playing}
             playsInline
             preload="metadata"
-            onPause={handlePause}
+            onEnded={handleEnded}
             className="absolute inset-0 h-full w-full object-cover"
           />
 
