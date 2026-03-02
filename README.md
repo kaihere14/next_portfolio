@@ -123,6 +123,13 @@
 | [Axios](https://axios-http.com/)                                             | HTTP Client          |
 | [react-github-calendar](https://www.npmjs.com/package/react-github-calendar) | GitHub Contributions |
 
+### **Analytics & Performance**
+
+| Technology                                                 | Purpose                               |
+| ---------------------------------------------------------- | ------------------------------------- |
+| [@vercel/analytics](https://vercel.com/analytics)          | Website Analytics                     |
+| [@vercel/speed-insights](https://vercel.com/speed-insights) | Real User Monitoring (RUM) & Insights |
+
 ### **Development Tools**
 
 | Technology                                           | Purpose              |
@@ -133,7 +140,6 @@
 | [lint-staged](https://github.com/okonet/lint-staged) | Staged Files Linting |
 
 ---
-
 ## 📁 Project Structure
 
 ```
@@ -205,45 +211,44 @@ next_portfolio/
 
 1. **Clone the repository**
 
-   ```bash
+   bash
    git clone https://github.com/kaihere14/next_portfolio.git
    cd next_portfolio
-   ```
+   
 
 2. **Install dependencies**
 
-   ```bash
+   bash
    npm install
    # or
    yarn install
    # or
    pnpm install
-   ```
+   
 
 3. **Set up environment variables**
 
    Create a `.env.local` file in the root directory:
 
-   ```env
+   env
    # GitHub API Token (for contribution graph)
    GITHUB_PATH=your_github_personal_access_token
 
    # Site URL (for SEO)
    NEXT_PUBLIC_SITE_URL=https://your-domain.com
-   ```
+   
 
 4. **Run the development server**
 
-   ```bash
+   bash
    npm run dev
-   ```
+   
 
 5. **Open your browser**
 
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ---
-
 ## 📜 Available Scripts
 
 | Command               | Description               |
@@ -335,11 +340,11 @@ Edit `components/HeroSection/SocialLinks.tsx` to add or modify social media link
 
 ### Vercel (Recommended)
 
-The easiest way to deploy is using [Vercel](https://vercel.com):
+The easiest way to deploy is using [Vercel](https://vercel.com). This project is configured to automatically collect **Vercel Analytics** and **Vercel Speed Insights** when deployed to Vercel.
 
 1. Push your code to GitHub
 2. Import the repository in Vercel
-3. Add environment variables
+3. Add environment variables (if any)
 4. Deploy!
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/kaihere14/next_portfolio)
@@ -354,7 +359,6 @@ This portfolio can be deployed on any platform that supports Next.js:
 - **Self-hosted** (VPS with Node.js)
 
 ---
-
 ## 📄 Environment Variables
 
 | Variable               | Required | Description                                             |
