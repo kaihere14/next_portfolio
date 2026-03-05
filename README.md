@@ -206,6 +206,7 @@ next_portfolio/
 
 - **Node.js** 18.17 or later
 - **npm**, **yarn**, **pnpm**, or **bun**
+- **Docker** (if running with Docker)
 
 ### Installation
 
@@ -238,13 +239,35 @@ next_portfolio/
    NEXT_PUBLIC_SITE_URL=https://your-domain.com
    
 
-4. **Run the development server**
+### Running the Application
+
+#### Using Node.js
+
+1. **Run the development server**
 
    bash
    npm run dev
    
 
-5. **Open your browser**
+2. **Open your browser**
+
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+#### Using Docker
+
+1. **Build the Docker image**
+
+   bash
+   docker build -t next_portfolio .
+   
+
+2. **Run the Docker container**
+
+   bash
+   docker run -p 3000:3000 next_portfolio
+   
+
+3. **Open your browser**
 
    Navigate to [http://localhost:3000](http://localhost:3000)
 
@@ -351,12 +374,13 @@ The easiest way to deploy is using [Vercel](https://vercel.com). This project is
 
 ### Other Platforms
 
-This portfolio can be deployed on any platform that supports Next.js:
+This portfolio can be deployed on any platform that supports Next.js, including those that leverage Docker containers:
 
 - **Netlify**
 - **Railway**
 - **AWS Amplify**
-- **Self-hosted** (VPS with Node.js)
+- **Self-hosted** (VPS with Node.js or Docker)
+- **Docker-compatible platforms** (e.g., Kubernetes, Docker Swarm, Google Cloud Run, AWS ECS/Fargate)
 
 ---
 ## 📄 Environment Variables
