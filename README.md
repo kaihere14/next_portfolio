@@ -34,6 +34,7 @@
 - **Responsive Design** - Mobile-first design that looks stunning on all devices
 - **Custom Typography** - Utilizes Geist font family and custom Hanken Grotesk variable font
 - **Handwritten Font** - Uses the Caveat Google Font for playful, handwritten annotations in the hero section
+- **Asset Preloading** - Preloads essential images (e.g., Logo_easter.webp) to improve load performance and ensure instant display of the avatar Easter egg
 
 ### 👤 **Hero Section**
 
