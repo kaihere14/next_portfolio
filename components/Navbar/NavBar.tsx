@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Moon, Sun } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 import { useTheme } from "../../hooks/ThemeProvider";
 
@@ -41,7 +42,18 @@ const NavBar = () => {
           className="cursor-pointer rounded-lg bg-neutral-100 p-3 text-neutral-500 shadow-[0_4px_0_0_rgba(0,0,0,0.15)] transition-all duration-200 hover:translate-y-[2px] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none sm:p-[10px] dark:bg-[#1e1e21] dark:text-white/80 dark:shadow-[0_4px_0_0_#0a0a0a] dark:hover:shadow-[0_2px_0_0_#0a0a0a] dark:active:shadow-none"
           aria-label="Toggle theme"
         >
-          {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              key={isDark ? "sun" : "moon"}
+              initial={{ opacity: 0, rotate: -30, scale: 0.7 }}
+              animate={{ opacity: 1, rotate: 0, scale: 1 }}
+              exit={{ opacity: 0, rotate: 30, scale: 0.7 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              style={{ display: "flex" }}
+            >
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            </motion.span>
+          </AnimatePresence>
         </button>
       </div>
     </nav>

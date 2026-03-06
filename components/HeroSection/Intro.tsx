@@ -2,13 +2,18 @@ import React from "react";
 
 import Image from "next/image";
 
+import ScribbleUnderline from "./ScribbleUnderline";
+
 const Intro = () => {
   return (
     <div>
-      <h1 className="pt-8 text-4xl leading-[1.15] font-bold tracking-tight sm:text-5xl">
+      <h1 className="pt-8 text-3xl leading-[1.15] font-bold tracking-tight sm:text-4xl md:text-5xl">
         <span className="block text-neutral-900 dark:text-white">
-          Hi, I&apos;m Arman{" "}
-          <span className="text-neutral-400 dark:text-neutral-500">—</span>
+          Hi, I&apos;m{" "}
+          <span className="relative inline-block">
+            Arman
+            <ScribbleUnderline />
+          </span>
         </span>
         <span className="block max-w-full text-neutral-400 dark:text-neutral-500">
           A Full Stack web developer.
