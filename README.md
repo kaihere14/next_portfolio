@@ -33,10 +33,12 @@
 - **Smooth Animations** - Built with Motion (Framer Motion) for fluid, modern animations
 - **Responsive Design** - Mobile-first design that looks stunning on all devices
 - **Custom Typography** - Utilizes Geist font family and custom Hanken Grotesk variable font
+- **Handwritten Font** - Uses the Caveat Google Font for playful, handwritten annotations in the hero section
 
 ### 👤 **Hero Section**
 
 - **Profile Avatar** - Animated profile image with theme-aware accent colors
+- **Interactive Avatar Easter Egg** - Click the avatar to toggle a surprise version with ripple effects, bounce‑pop animation, and a click sound
 - **Personal Stats** - Display years of experience, projects completed, and other metrics
 - **Social Links** - Easy access to Twitter/X, LinkedIn, GitHub, Instagram, Pinterest, and Email
 - **Live Spotify Activity** - Real-time display of currently playing or last played song via Spotify API integration
