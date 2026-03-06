@@ -75,6 +75,13 @@ export default function RootLayout({
         <link rel="preload" href="/x.webp" as="image" type="image/webp" />
         <link
           rel="preload"
+          href="/Logo_easter.webp"
+          as="image"
+          type="image/webp"
+        />
+
+        <link
+          rel="preload"
           href="/linkedin.webp"
           as="image"
           type="image/webp"
