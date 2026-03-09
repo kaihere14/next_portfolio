@@ -42,7 +42,7 @@
 - **Interactive Avatar Easter Egg** - Click the avatar to toggle a surprise version with ripple effects, bounce‑pop animation, and a click sound
 - **Personal Stats** - Display years of experience, projects completed, and other metrics
 - **Social Links** - Easy access to Twitter/X, LinkedIn, GitHub, Instagram, Pinterest, and Email
-- **Live Spotify Activity** - Real-time display of currently playing or last played song via Spotify API integration
+- **Live Spotify Activity** - Real-time display of currently playing or last played song via Spotify API integration, with robust fallback values for album art, song name, and artist information.
 - **Tech Stack Display** - Interactive tech icons with tooltips showing expertise
 
 ### 💼 **Experience Section**
@@ -83,6 +83,10 @@
 - Personal introduction with animated avatar
 - Skills showcase with technology icons
 
+### 🦶 **Footer**
+
+- **Website Visitor Counter** - Displays the total number of unique visitors to the portfolio, fetched from a backend API.
+
 ### 🔍 **SEO Optimized**
 
 - **Dynamic Sitemap** - Auto-generated sitemap for better search engine indexing
@@ -91,6 +95,7 @@
 - **Structured Data** - Proper heading hierarchy and semantic HTML
 
 ---
+
 ## 🛠️ Tech Stack
 
 ### **Core**
@@ -145,7 +150,7 @@
 ---
 ## 📁 Project Structure
 
-```
+
 next_portfolio/
 ├── app/                          # Next.js App Router
 │   ├── blogs/                    # Blog section
@@ -160,6 +165,9 @@ next_portfolio/
 │   ├── Achievments/              # Achievements section
 │   ├── Experience/               # Work experience section
 │   ├── Footer/                   # Footer component
+│   │   ├── Footer.tsx            # Main footer layout
+│   │   ├── FooterBlur.tsx        # Background blur effect for footer
+│   │   └── VisitorCounter.tsx    # Component to display website visitor count
 │   ├── GitHub/                   # GitHub activity section
 │   │   ├── GitHub.tsx            # Server component (fetches data)
 │   │   └── GitHubCalendarClient.tsx  # Client component (renders calendar)
@@ -199,7 +207,7 @@ next_portfolio/
     ├── eslint.config.mjs         # ESLint configuration
     ├── .prettierrc.json          # Prettier configuration
     └── .lintstagedrc.json        # Lint-staged configuration
-```
+
 
 ---
 
