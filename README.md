@@ -85,7 +85,7 @@
 
 ### 🦶 **Footer**
 
-- **Website Visitor Counter** - Displays the total number of unique visitors to the portfolio, fetched from a backend API.
+- **Website Visitor Counter** - Displays the total number of unique visitors to the portfolio with an animated number display, fetched from a backend API.
 
 ### 🔍 **SEO Optimized**
 
@@ -148,6 +148,7 @@
 | [lint-staged](https://github.com/okonet/lint-staged) | Staged Files Linting |
 
 ---
+
 ## 📁 Project Structure
 
 
@@ -163,6 +164,7 @@ next_portfolio/
 ├── components/
 │   ├── AboutMe/                  # About section
 │   ├── Achievments/              # Achievements section
+│   ├── CountUp.jsx               # Animated number display component
 │   ├── Experience/               # Work experience section
 │   ├── Footer/                   # Footer component
 │   │   ├── Footer.tsx            # Main footer layout
@@ -207,7 +209,6 @@ next_portfolio/
     ├── eslint.config.mjs         # ESLint configuration
     ├── .prettierrc.json          # Prettier configuration
     └── .lintstagedrc.json        # Lint-staged configuration
-
 
 ---
 
