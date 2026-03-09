@@ -2,6 +2,8 @@ import React from "react";
 
 import { Github, Linkedin, Mail } from "lucide-react";
 
+import { VisitorCounter } from "./VisitorCounter";
+
 const Footer = () => {
   return (
     <footer className="mt-15 space-y-8 pb-24">
@@ -52,6 +54,9 @@ const Footer = () => {
           © 2026 Crafted with <span className="text-red-500">♥</span> by Arman
           Thakur.
         </p>
+        <div className="mt-2 flex justify-center">
+          <VisitorCounter />
+        </div>
       </div>
     </footer>
   );

@@ -16,8 +16,11 @@ const SongActivity = async () => {
       <div className="flex items-center gap-3">
         <div className="relative">
           <Image
-            src={songData?.albumArt}
-            alt={songData?.name}
+            src={
+              songData?.albumArt ||
+              "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg"
+            }
+            alt={songData?.name || "Spotify"}
             width={50}
             height={50}
             quality={50}
@@ -48,7 +51,7 @@ const SongActivity = async () => {
           </span>
         </div>
       </div>
-      <Link href={songData?.url}>
+      <Link href={songData?.url || "https://open.spotify.com"}>
         <Play size={18} className="text-neutral-600" />
       </Link>
     </div>
