@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 import { Eye } from "lucide-react";
 
+import CountUp from "@/components/CountUp";
+
 const API_BASE = "https://portfolio-3-backend.vercel.app/api/visitors/counter";
 const STORAGE_KEY = "visitorId";
 
@@ -37,9 +39,21 @@ export const VisitorCounter = () => {
   if (count === null) return null;
 
   return (
-    <span className="inline-flex items-center gap-1.5 text-xs opacity-40">
-      <Eye size={12} />
-      {count.toLocaleString()} visitors
-    </span>
+    <div className="mt-4 inline-flex items-center gap-2 rounded-full border bg-neutral-100 px-4 py-1.5 shadow-[0_4px_0_0_rgba(0,0,0,0.1)] dark:bg-neutral-800 dark:shadow-[0_4px_0_0_rgba(0,0,0,0.4)]">
+      <Eye size={13} className="text-neutral-500 dark:text-neutral-400" />
+      <span className="text-xs font-semibold text-neutral-700 tabular-nums dark:text-neutral-300">
+        <CountUp
+          from={0}
+          to={count}
+          separator=","
+          direction="up"
+          duration={1.2}
+          startWhen={true}
+        />
+      </span>
+      <span className="text-xs text-neutral-500 dark:text-neutral-400">
+        visitors
+      </span>
+    </div>
   );
 };
