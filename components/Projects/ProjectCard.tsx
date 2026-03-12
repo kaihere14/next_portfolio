@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
 
 import { ProjectType } from "./Projects";
 import ProjectsButton from "./ProjectsButton";
@@ -31,11 +34,21 @@ const getTechIcon = (tech: string) => {
   return iconMap[tech] || null;
 };
 
-const ProjectCard = ({ project }: { project: ProjectType }) => {
+const ProjectCard = ({
+  project,
+  onClick,
+}: {
+  project: ProjectType;
+  onClick: () => void;
+}) => {
   const { name, description, image, tech, status, link, githubLink } = project;
 
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-neutral-50 transition-all duration-500 ease-out hover:border-neutral-300 hover:bg-neutral-100 dark:bg-neutral-900/50 dark:hover:border-neutral-700 dark:hover:bg-neutral-900">
+    <motion.div
+      layoutId={`card-${project.id}`}
+      onClick={onClick}
+      className="group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl border bg-neutral-50 transition-all duration-500 ease-out hover:border-neutral-300 hover:bg-neutral-100 dark:bg-neutral-900/50 dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
+    >
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         <Image
@@ -114,6 +127,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="group/link flex items-center gap-1 text-xs text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-white"
           >
             View Details
@@ -124,7 +138,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
