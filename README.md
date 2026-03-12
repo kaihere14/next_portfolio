@@ -54,11 +54,13 @@
 ### 🚀 **Projects Showcase**
 
 - **Featured Projects Grid** - Display of 7 production-ready projects
+- **Interactive Project Details** - Project cards are clickable to open a full-screen modal with detailed information, animated transitions, and portal rendering.
 - **Project Cards** - Each card includes:
   - Project name and tagline
   - Description and tech stack
   - Status indicator
   - Live demo and GitHub links
+- **Project Detail Modal** - Displays an expanded view of a project with a larger image, tagline, detailed description, full tech stack, status, and a direct link to the live site.
 - **Show More/Less** - Initially displays 4 projects with expandable view
 
 ### 📊 **GitHub Integration**
@@ -185,8 +187,8 @@ next_portfolio/
 │   ├── Navbar/                   # Navigation with theme toggle
 │   ├── Projects/                 # Projects section
 │   │   ├── Projects.tsx          # Projects data & container
-│   │   ├── ProjectsGrid.tsx      # Grid layout component
-│   │   └── ProjectCard.tsx       # Individual project card
+│   │   ├── ProjectsGrid.tsx      # Grid layout, handles project detail modal state and rendering via portal
+│   │   └── ProjectCard.tsx       # Individual project card, now clickable to open detail modal
 │   └── ui/                       # Reusable UI components
 │
 ├── hooks/
@@ -207,7 +209,6 @@ next_portfolio/
     ├── tsconfig.json             # TypeScript configuration
     ├── tailwind.config.ts        # TailwindCSS configuration
     ├── eslint.config.mjs         # ESLint configuration
-    ├── .prettierrc.json          # Prettier configuration
     └── .lintstagedrc.json        # Lint-staged configuration
 
 ---
