@@ -35,11 +35,13 @@
 - **Custom Typography** - Utilizes Geist font family and custom Hanken Grotesk variable font
 - **Handwritten Font** - Uses the Caveat Google Font for playful, handwritten annotations in the hero section
 - **Asset Preloading** - Preloads essential images (e.g., Logo_easter.webp) to improve load performance and ensure instant display of the avatar Easter egg
+- **Dynamic Hero Backgrounds** - Theme-aware background images for the hero section, adapting to light and dark modes.
 
 ### 👤 **Hero Section**
 
 - **Profile Avatar** - Animated profile image with theme-aware accent colors
 - **Interactive Avatar Easter Egg** - Click the avatar to toggle a surprise version with ripple effects, bounce‑pop animation, and a click sound
+- **Dynamic Background Images** - Features distinct background images for light and dark themes, enhancing visual appeal.
 - **Personal Stats** - Display years of experience, projects completed, and other metrics
 - **Social Links** - Easy access to Twitter/X, LinkedIn, GitHub, Instagram, Pinterest, and Email
 - **Live Spotify Activity** - Real-time display of currently playing or last played song via Spotify API integration, with robust fallback values for album art, song name, and artist information.
@@ -307,12 +309,13 @@ The portfolio supports **dark** and **light** modes with:
 - **Manual toggle** - Switch themes via navbar button
 - **No flash** - Theme is applied before hydration
 - **Persistence** - Theme choice saved in localStorage
+- **Hero Backgrounds** - Automatically switches between `light_hero.png` and `dark_hero.png` based on the active theme.
 
 ### Custom CSS Variables
 
 Theme-aware variables are defined in `globals.css`:
 
-```css
+css
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -324,7 +327,7 @@ Theme-aware variables are defined in `globals.css`:
   --foreground: oklch(0.985 0 0);
   /* ... more variables */
 }
-```
+
 
 ---
 
@@ -334,7 +337,7 @@ Theme-aware variables are defined in `globals.css`:
 
 Edit `components/Projects/Projects.tsx`:
 
-```typescript
+typescript
 const projects: ProjectType[] = [
   {
     id: "your-project",
@@ -349,13 +352,13 @@ const projects: ProjectType[] = [
   },
   // ... more projects
 ];
-```
+
 
 ### Updating Tech Stack
 
 Edit `components/HeroSection/TechStack.tsx`:
 
-```typescript
+typescript
 export const techStack = [
   {
     name: "Technology Name",
@@ -364,7 +367,7 @@ export const techStack = [
   },
   // ... more technologies
 ];
-```
+
 
 ### Customizing Social Links
 
