@@ -11,7 +11,7 @@ import TechStack from "./TechStack";
 const Hero = () => {
   return (
     <section className="w-full">
-      <div className="mt- relative mb-8 h-72 w-full overflow-hidden rounded-[2rem] border border-black/10 bg-neutral-100 shadow-[0_24px_60px_rgba(0,0,0,0.12)] sm:h-80 dark:border-white/10 dark:bg-neutral-900">
+      <div className="relative mt-12 mb-8 h-72 w-full overflow-hidden rounded-[2rem] border border-black/10 bg-neutral-100 shadow-[0_24px_60px_rgba(0,0,0,0.12)] sm:h-80 dark:border-white/10 dark:bg-neutral-900">
         <Image
           src="/light_hero.png"
           alt="Light hero background"
