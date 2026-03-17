@@ -45,7 +45,7 @@ const ProfileAvatar = () => {
         RIPPLES.map((delay, i) => (
           <motion.span
             key={`${sparkleKey}-${i}`}
-            className="pointer-events-none absolute inset-0 rounded-full"
+            className="pointer-events-none absolute inset-0 z-20 rounded-full"
             style={{
               border: `2px solid ${easterState ? "rgba(96,165,250,0.8)" : "rgba(129,140,248,0.8)"}`,
             }}
@@ -57,6 +57,7 @@ const ProfileAvatar = () => {
 
       {/* Avatar with bounce-pop on toggle */}
       <motion.div
+        className="relative z-10"
         animate={
           easterState
             ? { scale: [1, 1.13, 0.95, 1.05, 1], rotate: [0, -6, 6, -3, 0] }
@@ -114,7 +115,7 @@ const ProfileAvatar = () => {
                 height="18"
                 viewBox="0 0 30 18"
                 fill="none"
-                className="inline-block -rotate-12 [transform:scaleX(-1)] sm:rotate-12 sm:[transform:scaleX(1)]"
+                className="inline-block -rotate-12 transform-[scaleX(-1)] sm:rotate-12 sm:transform-[scaleX(1)]"
                 style={{ verticalAlign: "middle" }}
               >
                 <path
@@ -155,7 +156,7 @@ const ProfileAvatar = () => {
                 height="18"
                 viewBox="0 0 30 18"
                 fill="none"
-                className="inline-block -rotate-12 [transform:scaleX(-1)] sm:rotate-12 sm:[transform:scaleX(1)]"
+                className="inline-block -rotate-12 transform-[scaleX(-1)] sm:rotate-12 sm:transform-[scaleX(1)]"
                 style={{ verticalAlign: "middle" }}
               >
                 <path
