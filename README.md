@@ -310,6 +310,8 @@ The portfolio supports **dark** and **light** modes with:
 - **No flash** - Theme is applied before hydration
 - **Persistence** - Theme choice saved in localStorage
 - **Hero Backgrounds** - Automatically switches between `light_hero.png` and `dark_hero.png` based on the active theme.
+- **Smooth View Transitions** - Enjoy a visually appealing transition effect when switching themes, originating from the click position.
+- **Reduced Motion Preference** - The theme transition respects the user's `prefers-reduced-motion` setting for accessibility.
 
 ### Custom CSS Variables
 
@@ -328,9 +330,14 @@ css
   /* ... more variables */
 }
 
+/* Variables used for view transitions */
+:root {
+  --theme-click-x: 0px;
+  --theme-click-y: 0px;
+}
+
 
 ---
-
 ## 🔧 Customization
 
 ### Adding Projects
