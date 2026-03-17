@@ -56,15 +56,16 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   }, [isDark]);
 
   const toggleTheme = useCallback((x?: number, y?: number) => {
-    const applyTheme = () => {
-      const currentIsDark = themeStore.getSnapshot();
-      const newIsDark = !currentIsDark;
+    const currentIsDark = themeStore.getSnapshot();
+    const newIsDark = !currentIsDark;
+    const root = document.documentElement;
 
+    const applyTheme = () => {
       if (newIsDark) {
-        document.documentElement.classList.add("dark");
+        root.classList.add("dark");
         localStorage.setItem("theme", "dark");
       } else {
-        document.documentElement.classList.remove("dark");
+        root.classList.remove("dark");
         localStorage.setItem("theme", "light");
       }
 
@@ -88,22 +89,43 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     );
 
     const transition = document.startViewTransition(applyTheme);
+    let clipAnimationFinished: Promise<void> = Promise.resolve();
+
+    root.classList.add("theme-transitioning");
+    root.classList.toggle("theme-transitioning-reverse", newIsDark);
 
     transition.ready.then(() => {
-      document.documentElement.animate(
+      const clipAnimation = document.documentElement.animate(
         {
-          clipPath: [
-            `circle(0px at ${clickX}px ${clickY}px)`,
-            `circle(${endRadius}px at ${clickX}px ${clickY}px)`,
-          ],
+          clipPath: newIsDark
+            ? [
+                `circle(${endRadius}px at ${clickX}px ${clickY}px)`,
+                `circle(0px at ${clickX}px ${clickY}px)`,
+              ]
+            : [
+                `circle(0px at ${clickX}px ${clickY}px)`,
+                `circle(${endRadius}px at ${clickX}px ${clickY}px)`,
+              ],
         },
         {
           duration: 500,
           easing: "ease-in-out",
-          pseudoElement: "::view-transition-new(root)",
+          fill: "both",
+          pseudoElement: newIsDark
+            ? "::view-transition-old(root)"
+            : "::view-transition-new(root)",
         }
       );
+
+      clipAnimationFinished = clipAnimation.finished.then(() => undefined);
     });
+
+    Promise.allSettled([transition.finished, clipAnimationFinished]).finally(
+      () => {
+        root.classList.remove("theme-transitioning");
+        root.classList.remove("theme-transitioning-reverse");
+      }
+    );
   }, []);
 
   return (

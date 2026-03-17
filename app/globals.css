@@ -14,6 +14,8 @@ html {
 html.dark {
   --background: #161618;
   --foreground: #ededed;
+  --theme-old-z: 1;
+  --theme-new-z: 2;
 }
 
 @theme inline {
@@ -169,6 +171,26 @@ body {
 ::view-transition-new(root) {
   animation: none;
   mix-blend-mode: normal;
+}
+
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition: none !important;
+}
+
+html.theme-transitioning-reverse {
+  --theme-old-z: 2;
+  --theme-new-z: 1;
+}
+
+::view-transition-old(root) {
+  z-index: var(--theme-old-z);
+}
+
+::view-transition-new(root) {
+  z-index: var(--theme-new-z);
 }
 
 @layer base {
