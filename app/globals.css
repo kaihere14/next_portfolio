@@ -180,6 +180,20 @@ html.theme-transitioning *::after {
   transition: none !important;
 }
 
+/* Lock z-index vars for the duration of the transition (html.dark may be removed mid-transition) */
+html.theme-transitioning {
+  --theme-old-z: 1;
+  --theme-new-z: 2;
+}
+
+/* Pre-clip the new (white) snapshot to 0 so there's no flash before JS animation starts */
+html.theme-transitioning:not(.theme-transitioning-reverse)
+  ::view-transition-new(root) {
+  clip-path: circle(
+    0px at var(--theme-click-x, calc(100% - 24px)) var(--theme-click-y, 24px)
+  );
+}
+
 html.theme-transitioning-reverse {
   --theme-old-z: 2;
   --theme-new-z: 1;

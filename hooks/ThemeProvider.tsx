@@ -88,14 +88,18 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       Math.max(clickY, window.innerHeight - clickY)
     );
 
+    root.style.setProperty("--theme-click-x", `${clickX}px`);
+    root.style.setProperty("--theme-click-y", `${clickY}px`);
+
     const transition = document.startViewTransition(applyTheme);
     let clipAnimationFinished: Promise<void> = Promise.resolve();
+    let clipAnimation: Animation | null = null;
 
     root.classList.add("theme-transitioning");
     root.classList.toggle("theme-transitioning-reverse", newIsDark);
 
     transition.ready.then(() => {
-      const clipAnimation = document.documentElement.animate(
+      clipAnimation = document.documentElement.animate(
         {
           clipPath: newIsDark
             ? [
@@ -124,6 +128,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       () => {
         root.classList.remove("theme-transitioning");
         root.classList.remove("theme-transitioning-reverse");
+        root.style.removeProperty("--theme-click-x");
+        root.style.removeProperty("--theme-click-y");
+        // Cancel so the fill:"both" effect doesn't linger on the pseudo-element
+        // selector and corrupt the next transition's starting state.
+        clipAnimation?.cancel();
       }
     );
   }, []);
