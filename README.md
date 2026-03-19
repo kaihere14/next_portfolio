@@ -106,8 +106,8 @@
 
 | Technology                                    | Version | Purpose                      |
 | --------------------------------------------- | ------- | ---------------------------- |
-| [Next.js](https://nextjs.org/)                | 16.1.6  | React Framework (App Router) |
-| [React](https://react.dev/)                   | 19.2.3  | UI Library                   |
+| [Next.js](https://nextjs.org/)                | 16.2.0  | React Framework (App Router) |
+| [React](https://react.dev/)                   | 19.2.4  | UI Library                   |
 | [TypeScript](https://www.typescriptlang.org/) | 5.x     | Type Safety                  |
 
 ### **Styling**
@@ -152,7 +152,6 @@
 | [lint-staged](https://github.com/okonet/lint-staged) | Staged Files Linting |
 
 ---
-
 ## 📁 Project Structure
 
 
