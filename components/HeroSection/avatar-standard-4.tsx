@@ -89,6 +89,8 @@ const ProfileAvatar = () => {
             className={easterState ? "scale-300 pt-6" : ""}
             alt="@armanthakur"
             src={easterState ? "/Logo_easter.webp" : "/Logo.webp"}
+            loading="eager"
+            fetchPriority="high"
           />
         </Avatar>
       </motion.div>

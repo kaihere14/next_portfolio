@@ -2,7 +2,6 @@
 
 import React from "react";
 
-import Image from "next/image";
 import Link from "next/link";
 
 import { Moon, Sun } from "lucide-react";
@@ -22,7 +21,15 @@ const NavBar = () => {
           href="/"
           className="flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-xl border border-white bg-sky-200 transition-all duration-200 hover:scale-[0.9] dark:bg-amber-300"
         >
-          <Image src="/Logo.webp" alt="Logo" width={60} height={60} />
+          <img
+            src="/Logo.webp"
+            alt="Logo"
+            width={60}
+            height={60}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+          />
         </Link>
         <div className="font-md font-sm mt-8 flex gap-4 self-end text-[16px]">
           <Link className="hover:underline" href="/#work">
