@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
+import Link from "next/link";
 
 // Make sure to set this to your deployed backend URL in production
 const API_URL = "https://portfolio-3-backend.vercel.app";
@@ -23,13 +24,22 @@ interface Comment {
   date: string;
 }
 
-const Comments = () => {
+interface CommentsProps {
+  showAll?: boolean;
+  hideHeader?: boolean;
+}
+
+const Comments = ({ showAll = false, hideHeader = false }: CommentsProps) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState("");
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const commentsPerPage = 10;
 
   useEffect(() => {
     // Attempt to extract token from URL if redirected back from Google OAuth
@@ -165,12 +175,24 @@ const Comments = () => {
     }
   };
 
+  const totalPages = Math.ceil(comments.length / commentsPerPage);
+  const displayedComments = showAll
+    ? comments.slice(
+        (currentPage - 1) * commentsPerPage,
+        currentPage * commentsPerPage
+      )
+    : comments.slice(0, 3);
+
   return (
-    <section className="mt-15">
-      <h2 className="mb-2 text-sm font-semibold text-neutral-500 dark:text-neutral-400">
-        Guestbook
-      </h2>
-      <h2 className="mb-6 text-3xl font-bold">Leave a message</h2>
+    <section className={hideHeader ? "" : "mt-15"}>
+      {!hideHeader && (
+        <>
+          <h2 className="mb-2 text-sm font-semibold text-neutral-500 dark:text-neutral-400">
+            Guestbook
+          </h2>
+          <h2 className="mb-6 text-3xl font-bold">Leave a message</h2>
+        </>
+      )}
 
       <div className="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900">
         {!currentUser ? (
@@ -180,7 +202,7 @@ const Comments = () => {
             </p>
             <button
               onClick={handleLogin}
-              className="flex items-center gap-2 rounded-lg bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+              className="flex items-center gap-2 rounded-md border border-neutral-300 bg-neutral-100 px-4 py-2 text-sm font-medium text-black shadow-[0_4px_0_0_rgba(0,0,0,0.15)] transition-all duration-300 hover:translate-y-[2px] hover:bg-neutral-200 hover:shadow-[0_2px_0_0_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:shadow-[0_4px_0_0_#0a0a0a] dark:hover:bg-neutral-800 dark:hover:shadow-[0_2px_0_0_#0a0a0a] dark:active:shadow-none"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24">
                 <path
@@ -248,7 +270,7 @@ const Comments = () => {
               <button
                 type="submit"
                 disabled={submitting || !newComment.trim()}
-                className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-neutral-800 disabled:opacity-50 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200"
+                className="flex items-center gap-2 rounded-md border border-neutral-700 bg-neutral-900 px-4 py-2 text-sm font-medium text-white shadow-[0_4px_0_0_#0a0a0a] transition-all duration-300 hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-[0_4px_0_0_#0a0a0a] active:translate-y-[4px] active:shadow-none disabled:opacity-50 disabled:active:translate-y-0 disabled:active:shadow-[0_4px_0_0_#0a0a0a] dark:border-neutral-300 dark:bg-neutral-100 dark:text-black dark:shadow-[0_4px_0_0_rgba(0,0,0,0.15)] dark:hover:bg-neutral-200 dark:disabled:opacity-50"
               >
                 {submitting ? "Posting..." : "Post Comment"}
               </button>
@@ -263,41 +285,78 @@ const Comments = () => {
             <div className="h-6 w-6 animate-spin rounded-full border-b-2 border-neutral-900 dark:border-neutral-100"></div>
           </div>
         ) : comments.length > 0 ? (
-          comments.map((comment) => (
-            <div key={comment.id} className="flex gap-4">
-              <div className="flex-shrink-0">
-                {comment.avatar ? (
-                  <Image
-                    src={comment.avatar}
-                    alt={comment.name}
-                    width={40}
-                    height={40}
-                    className="rounded-full"
-                    referrerPolicy="no-referrer"
-                  />
-                ) : (
-                  <div className="h-10 w-10 flex-shrink-0 rounded-full bg-neutral-200 dark:bg-neutral-800" />
-                )}
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold text-neutral-900 dark:text-neutral-100">
-                    {comment.name}
-                  </span>
-                  <span className="text-xs text-neutral-500 dark:text-neutral-400">
-                    {new Date(comment.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </span>
+          <>
+            {displayedComments.map((comment) => (
+              <div key={comment.id} className="group flex w-full gap-4">
+                <div className="flex-shrink-0 pt-1">
+                  {comment.avatar ? (
+                    <Image
+                      src={comment.avatar}
+                      alt={comment.name}
+                      width={40}
+                      height={40}
+                      className="rounded-full shadow-sm"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <div className="h-10 w-10 flex-shrink-0 rounded-full bg-neutral-200 shadow-sm dark:bg-neutral-800" />
+                  )}
                 </div>
-                <p className="mt-1 text-sm text-neutral-700 dark:text-neutral-300">
-                  {comment.content}
-                </p>
+                <div className="flex w-full flex-col">
+                  <div className="mb-1 flex items-center gap-2">
+                    <span className="font-semibold text-neutral-900 dark:text-neutral-100">
+                      {comment.name}
+                    </span>
+                    <span className="text-xs text-neutral-500 dark:text-neutral-400">
+                      {new Date(comment.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </span>
+                  </div>
+                  <div className="w-full rounded-2xl rounded-tl-sm border border-neutral-200 bg-neutral-50/50 p-4 transition-colors group-hover:bg-neutral-100/50 dark:border-neutral-800/60 dark:bg-neutral-900/40 dark:group-hover:bg-neutral-800/40">
+                    <p className="text-sm leading-relaxed whitespace-pre-wrap text-neutral-700 dark:text-neutral-300">
+                      {comment.content}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))
+            ))}
+            {!showAll && comments.length > 3 && (
+              <div className="mt-4 flex justify-center">
+                <Link
+                  href="/guestbook"
+                  className="text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+                >
+                  View all {comments.length} comments →
+                </Link>
+              </div>
+            )}
+            {showAll && totalPages > 1 && (
+              <div className="mt-8 flex items-center justify-between border-t border-neutral-200 pt-6 dark:border-neutral-800">
+                <button
+                  onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+                  disabled={currentPage === 1}
+                  className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 disabled:opacity-50 dark:text-neutral-400 dark:hover:bg-neutral-800/50"
+                >
+                  ← Previous
+                </button>
+                <div className="text-sm text-neutral-500">
+                  Page {currentPage} of {totalPages}
+                </div>
+                <button
+                  onClick={() =>
+                    setCurrentPage((p) => Math.min(p + 1, totalPages))
+                  }
+                  disabled={currentPage === totalPages}
+                  className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 disabled:opacity-50 dark:text-neutral-400 dark:hover:bg-neutral-800/50"
+                >
+                  Next →
+                </button>
+              </div>
+            )}
+          </>
         ) : (
           <p className="text-center text-neutral-500">
             No comments yet. Be the first to leave one!

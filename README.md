@@ -106,6 +106,7 @@
 - **Structured Data** - Proper heading hierarchy and semantic HTML
 
 ---
+
 ## 🛠️ Tech Stack
 
 ### **Core**
@@ -143,9 +144,9 @@
 
 ### **Analytics & Performance**
 
-| Technology                                                 | Purpose                               |
-| ---------------------------------------------------------- | ------------------------------------- |
-| [@vercel/analytics](https://vercel.com/analytics)          | Website Analytics                     |
+| Technology                                                  | Purpose                               |
+| ----------------------------------------------------------- | ------------------------------------- |
+| [@vercel/analytics](https://vercel.com/analytics)           | Website Analytics                     |
 | [@vercel/speed-insights](https://vercel.com/speed-insights) | Real User Monitoring (RUM) & Insights |
 
 ### **Development Tools**
@@ -161,67 +162,67 @@
 
 ## 📁 Project Structure
 
-
 next_portfolio/
-├── app/                          # Next.js App Router
-│   ├── blogs/                    # Blog section
-│   ├── globals.css               # Global styles & theme variables
-│   ├── layout.tsx                # Root layout with providers
-│   ├── page.tsx                  # Home page with metadata
-│   ├── robots.ts                 # Robots.txt configuration
-│   └── sitemap.ts                # Dynamic sitemap generation
+├── app/ # Next.js App Router
+│ ├── blogs/ # Blog section
+│ ├── globals.css # Global styles & theme variables
+│ ├── layout.tsx # Root layout with providers
+│ ├── page.tsx # Home page with metadata
+│ ├── robots.ts # Robots.txt configuration
+│ └── sitemap.ts # Dynamic sitemap generation
 │
 ├── components/
-│   ├── AboutMe/                  # About section
-│   ├── Achievments/              # Achievements section
-│   ├── CountUp.jsx               # Animated number display component
-│   ├── Experience/               # Work experience section
-│   ├── Footer/                   # Footer component
-│   │   ├── Footer.tsx            # Main footer layout
-│   │   ├── FooterBlur.tsx        # Background blur effect for footer
-│   │   └── VisitorCounter.tsx    # Component to display website visitor count
-│   ├── GitHub/                   # GitHub activity section
-│   │   ├── GitHub.tsx            # Server component (fetches data)
-│   │   └── GitHubCalendarClient.tsx  # Client component (renders calendar)
-│   ├── HeroSection/              # Hero section components
-│   │   ├── Hero.tsx              # Main hero wrapper
-│   │   ├── ActiveStatus.tsx      # Discord status
-│   │   ├── GetInTouch.tsx        # CTA button
-│   │   ├── Intro.tsx             # Introduction text
-│   │   ├── SocialLinks.tsx       # Social media links
-│   │   ├── SongActivity.tsx      # Spotify integration
-│   │   ├── Stats.tsx             # Personal statistics
-│   │   └── TechStack.tsx         # Technology icons
-│   ├── Navbar/                   # Navigation with theme toggle
-│   ├── Projects/                 # Projects section
-│   │   ├── Projects.tsx          # Projects data & container
-│   │   ├── ProjectsGrid.tsx      # Grid layout, handles project detail modal state and rendering via portal
-│   │   └── ProjectCard.tsx       # Individual project card, now clickable to open detail modal
-│   ├── Comments/                 # Comments section with authentication and posting
-│   │   └── Comments.tsx          # Client component for displaying and submitting comments
-│   └── ui/                       # Reusable UI components
+│ ├── AboutMe/ # About section
+│ ├── Achievments/ # Achievements section
+│ ├── CountUp.jsx # Animated number display component
+│ ├── Experience/ # Work experience section
+│ ├── Footer/ # Footer component
+│ │ ├── Footer.tsx # Main footer layout
+│ │ ├── FooterBlur.tsx # Background blur effect for footer
+│ │ └── VisitorCounter.tsx # Component to display website visitor count
+│ ├── GitHub/ # GitHub activity section
+│ │ ├── GitHub.tsx # Server component (fetches data)
+│ │ └── GitHubCalendarClient.tsx # Client component (renders calendar)
+│ ├── HeroSection/ # Hero section components
+│ │ ├── Hero.tsx # Main hero wrapper
+│ │ ├── ActiveStatus.tsx # Discord status
+│ │ ├── GetInTouch.tsx # CTA button
+│ │ ├── Intro.tsx # Introduction text
+│ │ ├── SocialLinks.tsx # Social media links
+│ │ ├── SongActivity.tsx # Spotify integration
+│ │ ├── Stats.tsx # Personal statistics
+│ │ └── TechStack.tsx # Technology icons
+│ ├── Navbar/ # Navigation with theme toggle
+│ ├── Projects/ # Projects section
+│ │ ├── Projects.tsx # Projects data & container
+│ │ ├── ProjectsGrid.tsx # Grid layout, handles project detail modal state and rendering via portal
+│ │ └── ProjectCard.tsx # Individual project card, now clickable to open detail modal
+│ ├── Comments/ # Comments section with authentication and posting
+│ │ └── Comments.tsx # Client component for displaying and submitting comments
+│ └── ui/ # Reusable UI components
 │
 ├── hooks/
-│   └── ThemeProvider.tsx         # Theme context & hook
+│ └── ThemeProvider.tsx # Theme context & hook
 │
 ├── lib/
-│   └── utils.ts                  # Utility functions (cn helper)
+│ └── utils.ts # Utility functions (cn helper)
 │
-├── public/                       # Static assets
-│   ├── Logo.webp                 # Site logo
-│   ├── HankenGrotesk-Variable.ttf  # Custom font
-│   └── [project_images].webp     # Project screenshots
+├── public/ # Static assets
+│ ├── Logo.webp # Site logo
+│ ├── HankenGrotesk-Variable.ttf # Custom font
+│ └── [project_images].webp # Project screenshots
 │
-├── types/                        # TypeScript type definitions
+├── types/ # TypeScript type definitions
 │
 └── configuration files
-    ├── next.config.ts            # Next.js configuration
-    ├── tsconfig.json             # TypeScript configuration
-    ├── tailwind.config.ts        # TailwindCSS configuration
-    ├── eslint.config.mjs         # ESLint configuration
-    └── .lintstagedrc.json        # Lint-staged configuration
+├── next.config.ts # Next.js configuration
+├── tsconfig.json # TypeScript configuration
+├── tailwind.config.ts # TailwindCSS configuration
+├── eslint.config.mjs # ESLint configuration
+└── .lintstagedrc.json # Lint-staged configuration
 
 ---
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -237,29 +238,33 @@ next_portfolio/
    bash
    git clone https://github.com/kaihere14/next_portfolio.git
    cd next_portfolio
-   
 
 2. **Install dependencies**
 
    bash
    npm install
+
    # or
+
    yarn install
+
    # or
+
    pnpm install
-   
 
 3. **Set up environment variables**
 
    Create a `.env.local` file in the root directory:
 
    env
+
    # GitHub API Token (for contribution graph)
+
    GITHUB_PATH=your_github_personal_access_token
 
    # Site URL (for SEO)
+
    NEXT_PUBLIC_SITE_URL=https://your-domain.com
-   
 
 ### Running the Application
 
@@ -269,7 +274,6 @@ next_portfolio/
 
    bash
    npm run dev
-   
 
 2. **Open your browser**
 
@@ -281,19 +285,18 @@ next_portfolio/
 
    bash
    docker build -t next_portfolio .
-   
 
 2. **Run the Docker container**
 
    bash
    docker run -p 3000:3000 next_portfolio
-   
 
 3. **Open your browser**
 
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ---
+
 ## 📜 Available Scripts
 
 | Command               | Description               |
@@ -326,23 +329,22 @@ Theme-aware variables are defined in `globals.css`:
 
 css
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  /* ... more variables */
+--background: oklch(1 0 0);
+--foreground: oklch(0.145 0 0);
+/_ ... more variables _/
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  /* ... more variables */
+--background: oklch(0.145 0 0);
+--foreground: oklch(0.985 0 0);
+/_ ... more variables _/
 }
 
-/* Variables used for view transitions */
+/_ Variables used for view transitions _/
 :root {
-  --theme-click-x: 0px;
-  --theme-click-y: 0px;
+--theme-click-x: 0px;
+--theme-click-y: 0px;
 }
-
 
 ---
 
@@ -354,20 +356,19 @@ Edit `components/Projects/Projects.tsx`:
 
 typescript
 const projects: ProjectType[] = [
-  {
-    id: "your-project",
-    name: "Project Name",
-    tagline: "Short Tagline",
-    description: "Full description of the project",
-    image: "/project_image.webp",
-    tech: ["React", "Node.js", "MongoDB"],
-    status: "All Systems Operational",
-    link: "https://live-demo.com",
-    githubLink: "https://github.com/username/repo",
-  },
-  // ... more projects
+{
+id: "your-project",
+name: "Project Name",
+tagline: "Short Tagline",
+description: "Full description of the project",
+image: "/project_image.webp",
+tech: ["React", "Node.js", "MongoDB"],
+status: "All Systems Operational",
+link: "https://live-demo.com",
+githubLink: "https://github.com/username/repo",
+},
+// ... more projects
 ];
-
 
 ### Updating Tech Stack
 
@@ -375,14 +376,13 @@ Edit `components/HeroSection/TechStack.tsx`:
 
 typescript
 export const techStack = [
-  {
-    name: "Technology Name",
-    icon: "https://skillicons.dev/icons?i=tech",
-    desc: "Category",
-  },
-  // ... more technologies
+{
+name: "Technology Name",
+icon: "https://skillicons.dev/icons?i=tech",
+desc: "Category",
+},
+// ... more technologies
 ];
-
 
 ### Customizing Social Links
 
@@ -414,6 +414,7 @@ This portfolio can be deployed on any platform that supports Next.js, including 
 - **Docker-compatible platforms** (e.g., Kubernetes, Docker Swarm, Google Cloud Run, AWS ECS/Fargate)
 
 ---
+
 ## 📄 Environment Variables
 
 | Variable               | Required | Description                                             |
