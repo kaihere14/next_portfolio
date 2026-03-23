@@ -91,11 +91,17 @@
 
 - **Website Visitor Counter** - Displays the total number of unique visitors to the portfolio with an animated number display, fetched from a backend API.
 
+### ✍️ **Guestbook Page**
+
+- **Dedicated Guestbook** – A standalone page (`/guestbook`) for visitors to leave messages, feedback, or greetings.
+- **Integrated Comments** – Utilizes the enhanced comments functionality for user interaction.
+- **SEO Optimized** – Dedicated metadata for improved search engine visibility.
+
 ### 💬 **Comments Section**
 
 - **User Authentication** – Google OAuth integration with token handling via URL parameters and localStorage.
 - **Auth Success Page** – Captures `accessToken` from OAuth redirect, stores it in `localStorage`, and redirects users back to the homepage.
-- **View & Post Comments** – Displays a list of comments with avatars, names, timestamps, and allows logged‑in users to submit new comments.
+- **View & Post Comments** – Displays a paginated list of comments with avatars, names, timestamps, and allows logged‑in users to submit new comments.
 - **Responsive Design** – Styled to match the site’s theme and works seamlessly on mobile devices.
 
 ### 🔍 **SEO Optimized**
@@ -165,6 +171,8 @@
 next_portfolio/
 ├── app/ # Next.js App Router
 │ ├── blogs/ # Blog section
+│ ├── guestbook/ # Guestbook page for visitor messages
+│ │ └── page.tsx # Guestbook page content
 │ ├── globals.css # Global styles & theme variables
 │ ├── layout.tsx # Root layout with providers
 │ ├── page.tsx # Home page with metadata
