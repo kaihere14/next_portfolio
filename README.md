@@ -100,7 +100,8 @@
 ### 💬 **Comments Section**
 
 - **User Authentication** – Google OAuth integration with token handling via URL parameters and localStorage.
-- **Auth Success Page** – Captures `accessToken` from OAuth redirect, stores it in `localStorage`, and redirects users back to the homepage.
+- **Enhanced Login Redirect** – Stores the current page path before Google OAuth, ensuring users are seamlessly returned to the exact page and comments section after successful authentication.
+- **Auth Success Page** – Captures `accessToken` from OAuth redirect, stores it in `localStorage`, and intelligently redirects users back to their original page and the comments section.
 - **View & Post Comments** – Displays a paginated list of comments with avatars, names, timestamps, and allows logged‑in users to submit new comments.
 - **Responsive Design** – Styled to match the site’s theme and works seamlessly on mobile devices.
 
@@ -112,7 +113,6 @@
 - **Structured Data** - Proper heading hierarchy and semantic HTML
 
 ---
-
 ## 🛠️ Tech Stack
 
 ### **Core**
