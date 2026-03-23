@@ -25,8 +25,10 @@ export const VisitorCounter = () => {
           setCount(data.count.totalVisitors);
         }
 
-        if (data.vistitorId) {
-          localStorage.setItem(STORAGE_KEY, data.vistitorId);
+        if (data.clearId) {
+          localStorage.removeItem(STORAGE_KEY);
+        } else if (data.visitorId) {
+          localStorage.setItem(STORAGE_KEY, data.visitorId);
         }
       } catch {
         // silently fail — counter is non-critical
