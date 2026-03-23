@@ -158,6 +158,7 @@
 | [lint-staged](https://github.com/okonet/lint-staged) | Staged Files Linting |
 
 ---
+
 ## 📁 Project Structure
 
 
@@ -344,6 +345,7 @@ css
 
 
 ---
+
 ## 🔧 Customization
 
 ### Adding Projects
