@@ -34,7 +34,7 @@ const Comments = () => {
   useEffect(() => {
     // Attempt to extract token from URL if redirected back from Google OAuth
     const params = new URLSearchParams(window.location.search);
-    const tokenFromUrl = params.get("token");
+    const tokenFromUrl = params.get("accessToken");
     if (tokenFromUrl) {
       localStorage.setItem("accessToken", tokenFromUrl);
       // Optional: hide token from URL
