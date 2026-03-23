@@ -214,6 +214,7 @@ const Comments = () => {
                     width={32}
                     height={32}
                     className="rounded-full"
+                    referrerPolicy="no-referrer"
                   />
                 ) : (
                   <div className="h-8 w-8 rounded-full bg-neutral-200 dark:bg-neutral-800" />
@@ -272,6 +273,7 @@ const Comments = () => {
                     width={40}
                     height={40}
                     className="rounded-full"
+                    referrerPolicy="no-referrer"
                   />
                 ) : (
                   <div className="h-10 w-10 flex-shrink-0 rounded-full bg-neutral-200 dark:bg-neutral-800" />
