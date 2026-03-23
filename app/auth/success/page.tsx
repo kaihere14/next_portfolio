@@ -15,8 +15,12 @@ function AuthSuccessContent() {
       localStorage.setItem("accessToken", accessToken);
     }
 
-    // Redirect back to the homepage or intended destination
-    router.replace("/");
+    // Determine where to redirect back
+    const returnPath = localStorage.getItem("returnPath") || "/";
+    localStorage.removeItem("returnPath");
+
+    // Redirect back to the intended destination at the comments section
+    router.replace(`${returnPath}#comments`);
   }, [searchParams, router]);
 
   return (

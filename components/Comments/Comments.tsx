@@ -121,6 +121,8 @@ const Comments = ({ showAll = false, hideHeader = false }: CommentsProps) => {
   };
 
   const handleLogin = () => {
+    // Store current path to redirect back to the comment section after login
+    localStorage.setItem("returnPath", window.location.pathname);
     // Redirect to the backend OAuth initialization URL
     window.location.href = `${API_URL}/api/auth/google/login`;
   };
@@ -184,7 +186,10 @@ const Comments = ({ showAll = false, hideHeader = false }: CommentsProps) => {
     : comments.slice(0, 3);
 
   return (
-    <section className={hideHeader ? "" : "mt-15"}>
+    <section
+      id="comments"
+      className={`${hideHeader ? "" : "mt-15"} scroll-mt-24`}
+    >
       {!hideHeader && (
         <>
           <h2 className="mb-2 text-sm font-semibold text-neutral-500 dark:text-neutral-400">
