@@ -29,6 +29,12 @@ export const VisitorCounter = () => {
           localStorage.setItem(STORAGE_KEY, data.visitorId);
         } else if (data.clearId) {
           localStorage.removeItem(STORAGE_KEY);
+          // Fetch again with "noid" to get a new visitor ID
+          const retryRes = await fetch(`${API_BASE}/noid`);
+          const retryData = await retryRes.json();
+          if (retryData.visitorId) {
+            localStorage.setItem(STORAGE_KEY, retryData.visitorId);
+          }
         }
       } catch {
         // silently fail — counter is non-critical

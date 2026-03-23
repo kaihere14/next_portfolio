@@ -2,9 +2,9 @@ import { Metadata } from "next";
 
 import AboutMe from "@/components/AboutMe/AboutMe";
 import Achievments from "@/components/Achievments/Achievments";
+import Comments from "@/components/Comments/Comments";
 import Experience from "@/components/Experience/Experience";
 import Footer from "@/components/Footer/Footer";
-import FooterBlur from "@/components/Footer/FooterBlur";
 import GitHub from "@/components/GitHub/GitHub";
 import Hero from "@/components/HeroSection/Hero";
 import Projects from "@/components/Projects/Projects";
@@ -93,6 +93,9 @@ const page = () => {
       </FadeIn>
       <FadeIn>
         <Testimonial />
+      </FadeIn>
+      <FadeIn>
+        <Comments />
       </FadeIn>
       <FadeIn>
         <Footer />
