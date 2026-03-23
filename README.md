@@ -91,6 +91,12 @@
 
 - **Website Visitor Counter** - Displays the total number of unique visitors to the portfolio with an animated number display, fetched from a backend API.
 
+### 💬 **Comments Section**
+
+- **User Authentication** – Google OAuth integration with token handling via URL parameters and localStorage.
+- **View & Post Comments** – Displays a list of comments with avatars, names, timestamps, and allows logged‑in users to submit new comments.
+- **Responsive Design** – Styled to match the site’s theme and works seamlessly on mobile devices.
+
 ### 🔍 **SEO Optimized**
 
 - **Dynamic Sitemap** - Auto-generated sitemap for better search engine indexing
@@ -99,7 +105,6 @@
 - **Structured Data** - Proper heading hierarchy and semantic HTML
 
 ---
-
 ## 🛠️ Tech Stack
 
 ### **Core**
@@ -190,6 +195,8 @@ next_portfolio/
 │   │   ├── Projects.tsx          # Projects data & container
 │   │   ├── ProjectsGrid.tsx      # Grid layout, handles project detail modal state and rendering via portal
 │   │   └── ProjectCard.tsx       # Individual project card, now clickable to open detail modal
+│   ├── Comments/                 # Comments section with authentication and posting
+│   │   └── Comments.tsx          # Client component for displaying and submitting comments
 │   └── ui/                       # Reusable UI components
 │
 ├── hooks/
@@ -213,7 +220,6 @@ next_portfolio/
     └── .lintstagedrc.json        # Lint-staged configuration
 
 ---
-
 ## 🚀 Getting Started
 
 ### Prerequisites
