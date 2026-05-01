@@ -30,6 +30,11 @@ const getTechIcon = (tech: string) => {
     Gemini: "https://skillicons.dev/icons?i=gcp",
     "Google Calendar API": "https://cdn.simpleicons.org/googlecalendar",
     Resend: "https://cdn.simpleicons.org/resend",
+    "Next.js": "https://skillicons.dev/icons?i=nextjs",
+    TypeScript: "https://skillicons.dev/icons?i=ts",
+    Bun: "https://skillicons.dev/icons?i=bun",
+    PostgreSQL: "https://skillicons.dev/icons?i=postgres",
+    "Drizzle ORM": "https://cdn.simpleicons.org/drizzle",
   };
   return iconMap[tech] || null;
 };
