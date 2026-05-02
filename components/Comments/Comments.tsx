@@ -207,7 +207,7 @@ const Comments = ({ showAll = false, hideHeader = false }: CommentsProps) => {
             </p>
             <button
               onClick={handleLogin}
-              className="flex items-center gap-2 rounded-md border border-neutral-300 bg-neutral-100 px-4 py-2 text-sm font-medium text-black shadow-[0_4px_0_0_rgba(0,0,0,0.15)] transition-all duration-300 hover:translate-y-[2px] hover:bg-neutral-200 hover:shadow-[0_2px_0_0_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:shadow-[0_4px_0_0_#0a0a0a] dark:hover:bg-neutral-800 dark:hover:shadow-[0_2px_0_0_#0a0a0a] dark:active:shadow-none"
+              className="flex cursor-pointer items-center gap-2 rounded-md border border-neutral-300 bg-neutral-100 px-4 py-2 text-sm font-medium text-black shadow-[0_4px_0_0_rgba(0,0,0,0.15)] transition-all duration-300 hover:translate-y-[2px] hover:bg-neutral-200 hover:shadow-[0_2px_0_0_rgba(0,0,0,0.15)] active:translate-y-[4px] active:shadow-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:shadow-[0_4px_0_0_#0a0a0a] dark:hover:bg-neutral-800 dark:hover:shadow-[0_2px_0_0_#0a0a0a] dark:active:shadow-none"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24">
                 <path

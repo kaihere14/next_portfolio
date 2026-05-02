@@ -57,7 +57,7 @@ const projects: ProjectType[] = [
       "Drizzle ORM",
     ],
     status: "All Systems Operational",
-    link: "https://www.clura.armandev.space/",
+    link: "https://clura.armandev.space/",
     githubLink: "https://github.com/kaihere14/clura",
   },
   {
