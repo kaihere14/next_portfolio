@@ -11,8 +11,8 @@ const Footer = () => {
       <div className="flex flex-col items-center">
         {/* cal.com connect button  */}
         <Calbutton />
-        <div className="flex w-full flex-row items-center justify-between">
-          <div className="text-center md:text-left">
+        <div className="flex w-full flex-col items-center justify-between gap-8 md:flex-row">
+            <div className="text-center md:text-left">
             <p
               className={`mb-2 bg-linear-to-r bg-clip-text text-2xl font-bold text-transparent`}
             >
